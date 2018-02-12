@@ -564,8 +564,9 @@ class TorrentMethods(NS):
         # normalize keys
         result = [[normalize(t) for t in l] for l in result]
 
-        if result is None:
-            return
+        # guard against empty results
+        if result.count([]) == len(result):
+            return []
 
         # assuming all torrents have the same keys
         # (allows hoisting the if statement)
