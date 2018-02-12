@@ -13,7 +13,7 @@ pip install transmission-clutch
 To use:
 
 ```
->>> import clutch
+>>> from clutch.core import Client
 ```
 
 `clutch` was designed to be a more lightweight and consistent [Transmission][transmission]
@@ -32,7 +32,7 @@ To use `clutch` to control a default `transmission-daemon` on
 `localhost`:
 
 ```
->>> client = clutch.Client()
+>>> client = Client()
 >>> client.list()
 ```
 
@@ -47,22 +47,22 @@ To use different connection information:
 
 - complete path
 ```
-  >>> client = clutch.Client(address="https://host:port/path")
+  >>> client = Client(address="https://host:port/path")
 ```
 
 - default URL, but port change to 8080
 ```
-  >>> client = clutch.Client(port=8080)
+  >>> client = Client(port=8080)
 ```
 
 - default URL, but different host
 ```
-  >>> client = clutch.Client(host="github.com")
+  >>> client = Client(host="github.com")
 ```
 
 - default URL, but use a username and password
 ```
-  >>> client = clutch.Client(username='username', password='password')
+  >>> client = Client(username='username', password='password')
 ```
 
 `clutch`'s RPC methods are namespaced into four sections:
