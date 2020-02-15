@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MypyConfigService">
+    <option name="executableName" value="mypy --follow-imports=normal --python-executable /Users/mhadam/.pyenv/versions/3.8.0/bin/python3.8 ." />
+    <option name="pathSuffix" value="$USER_HOME$/.pyenv/versions/3.8.0/bin" />
+  </component>
+</project>

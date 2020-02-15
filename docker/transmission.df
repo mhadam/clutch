@@ -1,0 +1,16 @@
+FROM debian:buster-slim
+
+ARG APPROOT=/app
+ENV APPROOT $APPROOT
+
+# Install transmission:
+RUN apt-get update && apt-get install -y \
+  transmission-daemon
+
+WORKDIR $APPROOT
+COPY ./docker/settings.json $APPROOT
+RUN rm /etc/transmission-daemon/settings.json
+# exposes RPC port
+EXPOSE 9091
+# 51413/tcp 51413/udp
+ENTRYPOINT transmission-daemon --log-debug -f -g $APPROOT

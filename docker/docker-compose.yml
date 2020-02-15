@@ -1,0 +1,12 @@
+version: '3'
+services:
+  transmission:
+    build:
+      context: ..
+      dockerfile: docker/transmission.df
+  testbed:
+    build:
+      args:
+        YOUR_ENV: dev
+      context: ..
+      dockerfile: docker/clutch.df

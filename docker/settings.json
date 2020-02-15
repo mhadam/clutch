@@ -1,0 +1,5 @@
+{
+    "rpc-enabled" : "true",
+    "peer-port" : "51413",
+    "rpc-whitelist" : "*.*.*.*"
+}

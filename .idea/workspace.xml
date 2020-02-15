@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7d6a9bc2-8003-453a-ab6b-ab28b5d98f5f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clutch/middle.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clutch/network/connection.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clutch/network/rpc/arguments.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clutch/network/rpc/message.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clutch/network/rpc/session/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clutch/network/rpc/torrent/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clutch/network/rpc/torrent/action.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clutch/network/rpc/torrent/mutator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clutch/network/rpc/typing.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clutch/network/utility.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker/integration-test-wait.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker/integration-wait.df" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run-containers.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_client.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_networking.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="clutch" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1S9u4bGfPbznx8Hnd1oBT9F9Q3f" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/clutch" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="clutch" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="clutch" />
+      </console-settings>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/clutch/network/rpc" />
+      <recent name="$PROJECT_DIR$/clutch/network" />
+      <recent name="$PROJECT_DIR$/clutch/methods" />
+      <recent name="$PROJECT_DIR$/clutch" />
+      <recent name="$PROJECT_DIR$/docker" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python tests.pytest for test_clutch.test_version">
+    <configuration name="client_meta" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="clutch" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/clutch" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/clutch/client_meta.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="scratch" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="clutch" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scratch.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_clutch.test_version" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="clutch" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_clutch.test_version&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_rpc.test_receive" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="clutch" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_rpc.test_receive&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest in /Users/mhadam/Projects/clutch/tests/test_rpc.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="clutch" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_rpc.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest in tests" type="tests" factoryName="py.test" nameIsGenerated="true">
+      <module name="clutch" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="$USER_HOME$/Library/Caches/pypoetry/virtualenvs/clutch-py3.8/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.client_meta" />
+      <item itemvalue="Python.scratch" />
+      <item itemvalue="Python tests.pytest in tests" />
+      <item itemvalue="Python tests.pytest for test_rpc.test_receive" />
+      <item itemvalue="Python tests.pytest for test_clutch.test_version" />
+      <item itemvalue="Python tests.pytest in /Users/mhadam/Projects/clutch/tests/test_rpc.py" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.pytest for test_clutch.test_version" />
+        <item itemvalue="Python.scratch" />
+        <item itemvalue="Python.client_meta" />
+        <item itemvalue="Python tests.pytest in /Users/mhadam/Projects/clutch/tests/test_rpc.py" />
+        <item itemvalue="Python tests.pytest for test_rpc.test_receive" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7d6a9bc2-8003-453a-ab6b-ab28b5d98f5f" name="Default Changelist" comment="" />
+      <created>1570987942296</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1570987942296</updated>
+      <workItem from="1570987947582" duration="320000" />
+      <workItem from="1570999098114" duration="1649000" />
+      <workItem from="1571011298793" duration="575000" />
+      <workItem from="1571012203371" duration="19826000" />
+      <workItem from="1572924037598" duration="289000" />
+      <workItem from="1573438660564" duration="4985000" />
+      <workItem from="1574818164122" duration="6477000" />
+      <workItem from="1577106564122" duration="479000" />
+      <workItem from="1577463895038" duration="22000" />
+      <workItem from="1577463932507" duration="17722000" />
+      <workItem from="1578889561688" duration="2977000" />
+      <workItem from="1580688088159" duration="1031000" />
+      <workItem from="1580689849664" duration="7536000" />
+      <workItem from="1580951423111" duration="7165000" />
+      <workItem from="1580962071109" duration="3642000" />
+      <workItem from="1581037130069" duration="29360000" />
+      <workItem from="1581342562524" duration="8072000" />
+      <workItem from="1581467713257" duration="95000" />
+      <workItem from="1581467820280" duration="1437000" />
+      <workItem from="1581469861427" duration="134000" />
+      <workItem from="1581470007590" duration="10995000" />
+      <workItem from="1581637908778" duration="6895000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="442" y="260" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581724265030">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="442" y="260" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1581724265030" />
+    <state x="397" y="134" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog" timestamp="1580951571147">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="397" y="134" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog/0.0.1440.900@0.0.1440.900" timestamp="1580951571147" />
+    <state x="408" y="186" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1580951405750">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="408" y="186" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1440.900@0.0.1440.900" timestamp="1580951405750" />
+    <state x="507" y="214" key="FileChooserDialogImpl" timestamp="1581513688264">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="507" y="214" key="FileChooserDialogImpl/0.0.1440.900@0.0.1440.900" timestamp="1581513688264" />
+    <state width="699" height="303" key="GridCell.Tab.0.bottom" timestamp="1580688758512">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="699" height="303" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1580688758512" />
+    <state width="699" height="303" key="GridCell.Tab.0.center" timestamp="1580688758511">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="699" height="303" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1580688758511" />
+    <state width="699" height="303" key="GridCell.Tab.0.left" timestamp="1580688758510">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="699" height="303" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1580688758510" />
+    <state width="699" height="303" key="GridCell.Tab.0.right" timestamp="1580688758511">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="699" height="303" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1580688758511" />
+    <state width="699" height="303" key="GridCell.Tab.1.bottom" timestamp="1580688758514">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="699" height="303" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1580688758514" />
+    <state width="699" height="303" key="GridCell.Tab.1.center" timestamp="1580688758513">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="699" height="303" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1580688758513" />
+    <state width="699" height="303" key="GridCell.Tab.1.left" timestamp="1580688758512">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="699" height="303" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1580688758512" />
+    <state width="699" height="303" key="GridCell.Tab.1.right" timestamp="1580688758513">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="699" height="303" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1580688758513" />
+    <state x="117" y="78" key="SettingsEditor" timestamp="1581469995327">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="117" y="78" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1581469995327" />
+    <state x="375" y="214" width="689" height="472" key="find.popup" timestamp="1581513692817">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="375" y="214" width="689" height="472" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1581513692817" />
+    <state width="600" height="424" key="javadoc.popup" timestamp="1580950923861">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="600" height="424" key="javadoc.popup/0.0.1440.900@0.0.1440.900" timestamp="1580950923861" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1581656720898">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1581656720898" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/clutch$scratch.coverage" NAME="scratch Coverage Results" MODIFIED="1577464142409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/clutch$pytest_in_tests.coverage" NAME="pytest in tests Coverage Results" MODIFIED="1571280122182" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/clutch$pytest_in_test_rpc_py.coverage" NAME="pytest in test_rpc.py Coverage Results" MODIFIED="1571599233846" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/clutch$pytest_for_test_clutch_test_version.coverage" NAME="pytest for test_clutch.test_version Coverage Results" MODIFIED="1580688752862" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/clutch$client_meta.coverage" NAME="client_meta Coverage Results" MODIFIED="1575752641675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/clutch" />
+    <SUITE FILE_PATH="coverage/clutch$pytest_for_test_rpc_test_receive.coverage" NAME="pytest for test_rpc.test_receive Coverage Results" MODIFIED="1571280750249" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/clutch$Unittests_in_tests.coverage" NAME="Unittests in tests Coverage Results" MODIFIED="1571280000324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+  </component>
+</project>
