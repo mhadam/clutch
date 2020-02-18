@@ -58,4 +58,8 @@ def convert_mutator(mutator: TorrentMutator) -> Optional[Request]:
     if len(arguments := mutator["arguments"]) > 0:
         request['arguments'] = process_arguments(arguments)
 
+    try:
+        request['tag'] = mutator['tag']
+    except KeyError:
+        pass
     return request

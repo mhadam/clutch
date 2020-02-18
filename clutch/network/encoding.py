@@ -1,4 +1,5 @@
 import json
+from base64 import b64encode
 from enum import Enum
 
 
@@ -29,9 +30,5 @@ class TransmissionJSONEncoder(json.JSONEncoder):
         #     pass
         #
         # # a byte stream is base64 encoded
-        # try:
-        #     return b64encode(o).decode('utf-8')
-        # except TypeError:
-        #     pass
 
         return json.JSONEncoder.default(self, obj)

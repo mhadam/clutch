@@ -1,5 +1,6 @@
 {
     "rpc-enabled" : "true",
-    "peer-port" : "51413",
-    "rpc-whitelist" : "*.*.*.*"
+    "rpc-host-whitelist-enabled": true,
+    "rpc-host-whitelist": "transmission",
+    "rpc-whitelist-enabled": false
 }

@@ -10,3 +10,12 @@ services:
         YOUR_ENV: dev
       context: ..
       dockerfile: docker/clutch.df
+    depends_on:
+      - transmission
+  start_dependencies:
+    build:
+      context: .
+      dockerfile: integration-wait.df
+    depends_on:
+      - transmission
+    command: transmission:9091

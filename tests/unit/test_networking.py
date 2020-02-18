@@ -22,3 +22,6 @@ def test_connection_marshals_requests_and_responses():
     assert response["result"] == "success"
     assert response["arguments"] == {"test": "test"}
     assert response["tag"] == 1
+
+def test_docker_addresses_work():
+    pass

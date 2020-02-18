@@ -1,6 +1,6 @@
 CMD_ARGUMENTS ?= $(cmd)
 
-.PHONY: shell help build rebuild service login test clean prune
+.PHONY: shell help build rebuild service login test clean prune unit integration
 
 shell:
 ifeq ($(CMD_ARGUMENTS),)
@@ -40,16 +40,21 @@ prune:
 format:
 	black .
 
-unit-build:
-	docker build -f docker/clutch.df -t clutch-test .
-
 unit:
 	docker build -f docker/clutch.df -t clutch-test .
-	docker run --rm --entrypoint "/bin/sh" clutch-test -c "mypy . || pytest"
-	# here it is useful to add your own customised tests
-#	docker-compose -f docker/docker-compose.yml -p clutch run --rm testbed sh -c '\
-#		echo "pwd:`pwd`" && pytest && ls tests && echo "Docker runs!"' \
-#	&& echo success
+	docker run --rm --entrypoint "/bin/sh" clutch-test -c "mypy . || pytest tests/unit"
 
 integration:
-    docker-compose up --build
+	docker-compose -f ./docker/docker-compose.yml up -d --force-recreate --no-deps --build testbed transmission
+	docker-compose -f ./docker/docker-compose.yml run --rm start_dependencies
+	docker-compose -f ./docker/docker-compose.yml run --rm testbed sh -c "mypy . || pytest tests/integration"
+
+test-shell:
+	docker-compose -f ./docker/docker-compose.yml run testbed --entrypoint "/bin/sh"
+
+transmission-shell:
+	docker-compose -f ./docker/docker-compose.yml run transmission --entrypoint "/bin/sh"
+
+clean-containers:
+	docker stop $(docker ps -a -q)
+	docker rm $(docker ps -a -q)

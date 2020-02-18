@@ -1,6 +1,4 @@
-from typing import Union, Literal, Sequence, NamedTuple
-
-IdsArg = Union[int, Sequence[Union[str, int]], Literal["recently_active"]]
+from typing import Union, Sequence, NamedTuple
 
 
 class TrackerReplace(NamedTuple):

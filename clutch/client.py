@@ -1,4 +1,4 @@
-from typing import AnyStr, Optional
+from typing import Optional
 
 from clutch.middle import convert_mutator
 from clutch.network.connection import Connection
@@ -28,7 +28,8 @@ class Client:
     ):
         self._rpc_version = None
         self.timeout = timeout
-        self.endpoint: AnyStr = make_endpoint(address, scheme, host, port, path, query)
+        self.endpoint: str = make_endpoint(address, scheme, host, port, path, query)
+        print(f'endpoint:{self.endpoint}')
         self.session: TransmissionSession = TransmissionSession(username, password)
         self.connection: Connection = Connection(self.endpoint, self.session)
 

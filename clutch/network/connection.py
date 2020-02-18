@@ -1,4 +1,5 @@
 import json
+from json import JSONDecodeError
 from typing import Optional, Any, Mapping
 
 from clutch.network.encoding import TransmissionJSONEncoder
@@ -9,9 +10,7 @@ from clutch.network.session import TransmissionSession
 def _encode_request(rpc_request: Request) -> bytes:
     # encoding should be UTF-8
     # https://trac.transmissionbt.com/browser/trunk/extras/rpc-spec.txt#L19
-    return json.dumps(
-        rpc_request, ensure_ascii=False, cls=TransmissionJSONEncoder
-    ).encode("utf8")
+    return json.dumps(rpc_request, ensure_ascii=False, cls=TransmissionJSONEncoder).encode('utf-8')
 
 
 def _convert_to_domain(response: Mapping[str, Any]) -> Response:
@@ -23,7 +22,7 @@ def _convert_to_domain(response: Mapping[str, Any]) -> Response:
         pass
 
     try:
-        result["tag"] = result["tag"]
+        result["tag"] = response["tag"]
     except KeyError:
         pass
 
@@ -52,8 +51,12 @@ class Connection:
         self.session = session
 
     def send(self, rpc_request: Request) -> Optional[Response]:
-        response = self.session.post(self.endpoint, json=_encode_request(rpc_request))
-        decoded_response = json.loads(response.text)
-        if _validate_response(decoded_response):
-            return _convert_to_domain(decoded_response)
+        response = self.session.post(self.endpoint, data=_encode_request(rpc_request))
+        try:
+            decoded_response = json.loads(response.text)
+            if _validate_response(decoded_response):
+                return _convert_to_domain(decoded_response)
+        except JSONDecodeError as e:
+            print(f'{response.text}')
+            print(e)
         return None

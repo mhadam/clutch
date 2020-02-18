@@ -1,14 +1,14 @@
+from urllib.parse import urlparse
+
 from requests import Session
 from requests.auth import HTTPBasicAuth
 
 
 class TransmissionAuth(HTTPBasicAuth):
-    """Attaches HTTP CSRF authentication to the given Request object."""
-
     HEADER_NAME = "X-Transmission-Session-Id"
     HEADER_NAME_LOWER = HEADER_NAME.lower()
 
-    def __init__(self, username, password):
+    def __init__(self, username=None, password=None):
         # setup any auth-related data here
         self.__csrf_tokens = {}
         super(TransmissionAuth, self).__init__(username, password)
@@ -24,14 +24,14 @@ class TransmissionAuth(HTTPBasicAuth):
         self.__csrf_tokens[url] = r.headers[self.HEADER_NAME]
 
         # # copy the original headers
-        # new_headers = dict((k, v) for k, v in six.iteritems(r.request.headers)
-        #                    if k.lower() not in ('content-length',
-        #                                         'content-type',
-        #                                         self.HEADER_NAME_LOWER))
-        #
-        # new_headers['Host'] = urlparse(r.request.url).netloc
+        new_headers = dict((k, v) for k, v in r.request.headers.items()
+                           if k.lower() not in ('content-length',
+                                                'content-type',
+                                                self.HEADER_NAME_LOWER))
 
+        new_headers['Host'] = urlparse(r.request.url).netloc
         new_request = r.request.copy()
+        new_request.headers.update(new_headers)
         new_request.headers[self.HEADER_NAME] = self.__csrf_tokens[url]
         # pass the timeout along only if the timeout was specified
         # (otherwise probably an old version of Python)
@@ -47,7 +47,10 @@ class TransmissionAuth(HTTPBasicAuth):
 
     def __call__(self, r):
         """adds the appropriate CSRF token to the headers"""
-        r = super(TransmissionAuth, self).__call__(r)
+        # don't use authentication if username and password aren't defined
+        if self.username is not None and self.password is not None:
+            r = super(TransmissionAuth, self).__call__(r)
+
         token = self.__csrf_tokens.get(r.url)
         if token:
             r.headers[self.HEADER_NAME] = token

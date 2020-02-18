@@ -1,7 +1,7 @@
 from enum import unique, Enum
-from typing import TypedDict
+from typing import TypedDict, Union, Sequence, Literal
 
-from clutch.network.rpc.typing import IdsArg
+IdsArg = Union[int, Sequence[Union[str, int]], Literal["recently_active"]]
 
 
 @unique

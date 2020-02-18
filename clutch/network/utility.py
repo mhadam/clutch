@@ -11,6 +11,7 @@ def make_endpoint(
 ) -> str:
     # any explicit keyword arguments override the default address
     url_info = urlsplit(address)
+    print(f'{url_info}')
     if scheme is None:
         scheme = url_info.scheme
     if host is None:
@@ -21,5 +22,4 @@ def make_endpoint(
         path = url_info.path
     if query is None:
         query = url_info.query
-
     return urlunsplit((scheme, f"{host}:{port}", path, query, None))
