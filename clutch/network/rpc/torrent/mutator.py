@@ -1,4 +1,4 @@
-from typing import List, TypedDict, Tuple, Literal, Sequence
+from typing import TypedDict, Literal, Sequence
 
 from clutch.network.rpc.typing import TrackerReplace
 

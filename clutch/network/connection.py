@@ -10,7 +10,9 @@ from clutch.network.session import TransmissionSession
 def _encode_request(rpc_request: Request) -> bytes:
     # encoding should be UTF-8
     # https://trac.transmissionbt.com/browser/trunk/extras/rpc-spec.txt#L19
-    return json.dumps(rpc_request, ensure_ascii=False, cls=TransmissionJSONEncoder).encode('utf-8')
+    return json.dumps(
+        rpc_request, ensure_ascii=False, cls=TransmissionJSONEncoder
+    ).encode("utf-8")
 
 
 def _convert_to_domain(response: Mapping[str, Any]) -> Response:
@@ -45,7 +47,6 @@ def _validate_response(response: Mapping[str, Any]) -> bool:
 
 
 class Connection:
-
     def __init__(self, endpoint: str, session: TransmissionSession):
         self.endpoint = endpoint
         self.session = session
@@ -57,6 +58,6 @@ class Connection:
             if _validate_response(decoded_response):
                 return _convert_to_domain(decoded_response)
         except JSONDecodeError as e:
-            print(f'{response.text}')
+            print(f"{response.text}")
             print(e)
         return None

@@ -1,10 +1,10 @@
-from typing import TypedDict, Mapping
+from typing import TypedDict, Mapping, Any
 
 
 class OptionalMessageFields(TypedDict, total=False):
     """RPC message optional fields"""
 
-    arguments: Mapping[str, str]
+    arguments: Mapping[str, Any]
     tag: int
 
 

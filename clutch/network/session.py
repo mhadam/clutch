@@ -24,12 +24,14 @@ class TransmissionAuth(HTTPBasicAuth):
         self.__csrf_tokens[url] = r.headers[self.HEADER_NAME]
 
         # # copy the original headers
-        new_headers = dict((k, v) for k, v in r.request.headers.items()
-                           if k.lower() not in ('content-length',
-                                                'content-type',
-                                                self.HEADER_NAME_LOWER))
+        new_headers = dict(
+            (k, v)
+            for k, v in r.request.headers.items()
+            if k.lower()
+            not in ("content-length", "content-type", self.HEADER_NAME_LOWER)
+        )
 
-        new_headers['Host'] = urlparse(r.request.url).netloc
+        new_headers["Host"] = urlparse(r.request.url).netloc
         new_request = r.request.copy()
         new_request.headers.update(new_headers)
         new_request.headers[self.HEADER_NAME] = self.__csrf_tokens[url]

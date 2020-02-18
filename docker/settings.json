@@ -2,5 +2,7 @@
     "rpc-enabled" : "true",
     "rpc-host-whitelist-enabled": true,
     "rpc-host-whitelist": "transmission",
-    "rpc-whitelist-enabled": false
+    "rpc-whitelist-enabled": false,
+    "watch-dir-enabled": true,
+    "watch-dir": "/"
 }

@@ -1,8 +1,12 @@
 from typing import Optional
 
-from clutch.middle import convert_mutator, convert_action
+from clutch.middle import convert_mutator, convert_action, convert_accessor
 from clutch.network.connection import Connection
 from clutch.network.rpc.message import Response, Request
+from clutch.network.rpc.torrent.accessor import (
+    TorrentAccessorArguments,
+    TorrentAccessor,
+)
 from clutch.network.rpc.torrent.action import (
     TorrentAction,
     TorrentActionMethod,
@@ -57,4 +61,16 @@ class Client:
             mutator["tag"] = tag
 
         request: Request = convert_mutator(mutator)
+        return self.connection.send(request)
+
+    def torrent_accessor(
+        self, arguments: TorrentAccessorArguments = None, tag: int = None
+    ) -> Optional[Response]:
+        accessor = TorrentAccessor(method="torrent-get")
+        if arguments is not None:
+            accessor["arguments"] = arguments
+        if tag is not None:
+            accessor["tag"] = tag
+
+        request: Request = convert_accessor(accessor)
         return self.connection.send(request)

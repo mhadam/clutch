@@ -1,6 +1,7 @@
 from typing import Optional, Dict, Any, Mapping, Sequence, Union, List
 
 from clutch.network.rpc.message import Request
+from clutch.network.rpc.torrent.accessor import TorrentAccessor, TorrentAccessorArguments
 from clutch.network.rpc.torrent.action import TorrentAction, TorrentActionArguments
 from clutch.network.rpc.torrent.mutator import TorrentMutator, TorrentMutatorArguments
 from clutch.network.rpc.typing import FlatTrackerReplaceArg, TrackerReplace
@@ -79,6 +80,27 @@ def convert_mutator(mutator: TorrentMutator) -> Request:
 
     try:
         request['tag'] = mutator['tag']
+    except KeyError:
+        pass
+    return request
+
+
+def convert_accessor(accessor: TorrentAccessor) -> Request:
+    def process_arguments(args: TorrentAccessorArguments) -> Mapping[str, str]:
+        result = _clone_and_convert_keys(args)
+        for (k, v) in result.items():
+            if isinstance(v, set):
+                result[k] = v
+                continue
+            result[k] = str(v)
+        return result
+
+    request = Request(method=accessor['method'])
+    if len(arguments := accessor["arguments"]) > 0:
+        request['arguments'] = process_arguments(arguments)
+
+    try:
+        request['tag'] = accessor['tag']
     except KeyError:
         pass
     return request

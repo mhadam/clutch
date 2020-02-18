@@ -5,10 +5,11 @@ from enum import Enum
 
 class TransmissionJSONEncoder(json.JSONEncoder):
     def default(self, obj):
-        print(obj.__class__)
         if isinstance(obj, Enum):
             return obj.value
 
+        if isinstance(obj, set):
+            return list(obj)
         # # date{,time} is represented as seconds since epoch
         # try:
         #     return int(time.mktime(o.timetuple()))

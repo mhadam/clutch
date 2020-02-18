@@ -47,7 +47,7 @@ unit:
 integration:
 	docker-compose -f ./docker/docker-compose.yml up -d --force-recreate --no-deps --build testbed transmission
 	docker-compose -f ./docker/docker-compose.yml run --rm start_dependencies
-	docker-compose -f ./docker/docker-compose.yml run --rm testbed sh -c "mypy . || pytest tests/integration"
+	docker-compose -f ./docker/docker-compose.yml run --rm testbed sh -c "mypy .; pytest tests/endtoend"
 
 test-shell:
 	docker-compose -f ./docker/docker-compose.yml run testbed --entrypoint "/bin/sh"
