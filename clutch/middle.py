@@ -1,6 +1,7 @@
 from typing import Optional, Dict, Any, Mapping, Sequence, Union, List
 
 from clutch.network.rpc.message import Request
+from clutch.network.rpc.torrent.action import TorrentAction, TorrentActionArguments
 from clutch.network.rpc.torrent.mutator import TorrentMutator, TorrentMutatorArguments
 from clutch.network.rpc.typing import FlatTrackerReplaceArg, TrackerReplace
 
@@ -35,7 +36,25 @@ def _clone_and_convert_keys(arguments: Mapping[str, Any]) -> Dict[str, Any]:
     return result
 
 
-def convert_mutator(mutator: TorrentMutator) -> Optional[Request]:
+def convert_action(action: TorrentAction) -> Request:
+    def process_arguments(args: TorrentActionArguments) -> Mapping[str, str]:
+        result = _clone_and_convert_keys(args)
+        for (k, v) in result.items():
+            result[k] = str(v)
+        return result
+
+    request = Request(method=action['method'].value)
+    if len(arguments := action["arguments"]) > 0:
+        request['arguments'] = process_arguments(arguments)
+
+    try:
+        request['tag'] = action['tag']
+    except KeyError:
+        pass
+    return request
+
+
+def convert_mutator(mutator: TorrentMutator) -> Request:
     def flatten(tuples: Sequence[TrackerReplace]) -> FlatTrackerReplaceArg:
         result: List[Union[int, str]] = []
         pair: TrackerReplace

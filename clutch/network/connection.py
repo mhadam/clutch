@@ -50,8 +50,8 @@ class Connection:
         self.endpoint = endpoint
         self.session = session
 
-    def send(self, rpc_request: Request) -> Optional[Response]:
-        response = self.session.post(self.endpoint, data=_encode_request(rpc_request))
+    def send(self, request: Request) -> Optional[Response]:
+        response = self.session.post(self.endpoint, data=_encode_request(request))
         try:
             decoded_response = json.loads(response.text)
             if _validate_response(decoded_response):

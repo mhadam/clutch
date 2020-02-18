@@ -2,31 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d6a9bc2-8003-453a-ab6b-ab28b5d98f5f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/endtoend/test_action.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/endtoend/test_mutator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/integration/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/unit/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/unit/test_client.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clutch/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/clutch/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clutch/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/clutch/client.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clutch/middle.py" beforeDir="false" afterPath="$PROJECT_DIR$/clutch/middle.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clutch/network/connection.py" beforeDir="false" afterPath="$PROJECT_DIR$/clutch/network/connection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clutch/network/encoding.py" beforeDir="false" afterPath="$PROJECT_DIR$/clutch/network/encoding.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clutch/network/rpc/torrent/action.py" beforeDir="false" afterPath="$PROJECT_DIR$/clutch/network/rpc/torrent/action.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clutch/network/rpc/typing.py" beforeDir="false" afterPath="$PROJECT_DIR$/clutch/network/rpc/typing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clutch/network/session.py" beforeDir="false" afterPath="$PROJECT_DIR$/clutch/network/session.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clutch/network/utility.py" beforeDir="false" afterPath="$PROJECT_DIR$/clutch/network/utility.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/clutch.df" beforeDir="false" afterPath="$PROJECT_DIR$/docker/clutch.df" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/integration-wait.df" beforeDir="false" afterPath="$PROJECT_DIR$/docker/integration-wait.df" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/docker/settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/endtoend/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_clutch.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/unit/test_clutch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_networking.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/unit/test_networking.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -262,7 +241,7 @@
       <workItem from="1581467820280" duration="1437000" />
       <workItem from="1581469861427" duration="134000" />
       <workItem from="1581470007590" duration="10995000" />
-      <workItem from="1581637908778" duration="31058000" />
+      <workItem from="1581637908778" duration="34123000" />
     </task>
     <servers />
   </component>

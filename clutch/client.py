@@ -1,8 +1,8 @@
 from typing import Optional
 
-from clutch.middle import convert_mutator
+from clutch.middle import convert_mutator, convert_action
 from clutch.network.connection import Connection
-from clutch.network.rpc.message import Response
+from clutch.network.rpc.message import Response, Request
 from clutch.network.rpc.torrent.action import (
     TorrentAction,
     TorrentActionMethod,
@@ -29,7 +29,6 @@ class Client:
         self._rpc_version = None
         self.timeout = timeout
         self.endpoint: str = make_endpoint(address, scheme, host, port, path, query)
-        print(f'endpoint:{self.endpoint}')
         self.session: TransmissionSession = TransmissionSession(username, password)
         self.connection: Connection = Connection(self.endpoint, self.session)
 
@@ -44,7 +43,9 @@ class Client:
             action["arguments"] = arguments
         if tag is not None:
             action["tag"] = tag
-        return self.connection.send()
+
+        request: Request = convert_action(action)
+        return self.connection.send(request)
 
     def torrent_mutator(
         self, arguments: TorrentMutatorArguments = None, tag: int = None
@@ -55,8 +56,5 @@ class Client:
         if tag is not None:
             mutator["tag"] = tag
 
-        converted_mutator = convert_mutator(mutator)
-        if converted_mutator is not None:
-            if response := self.connection.send(converted_mutator):
-                return response
-        return None
+        request: Request = convert_mutator(mutator)
+        return self.connection.send(request)
