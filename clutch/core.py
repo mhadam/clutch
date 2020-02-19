@@ -566,7 +566,7 @@ class TorrentMethods(NS):
 
         # guard against empty results
         if result.count([]) == len(result):
-            return []
+            return {}
 
         # assuming all torrents have the same keys
         # (allows hoisting the if statement)
