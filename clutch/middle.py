@@ -3,7 +3,11 @@ from typing import Optional, Dict, Any, Mapping, Sequence, Union, List
 from clutch.network.rpc.message import Request
 from clutch.network.rpc.torrent.accessor import TorrentAccessor, TorrentAccessorArguments
 from clutch.network.rpc.torrent.action import TorrentAction, TorrentActionArguments
+from clutch.network.rpc.torrent.add import TorrentAdd, TorrentAddArguments
+from clutch.network.rpc.torrent.move import TorrentMove, TorrentMoveArguments
 from clutch.network.rpc.torrent.mutator import TorrentMutator, TorrentMutatorArguments
+from clutch.network.rpc.torrent.remove import TorrentRemove, TorrentRemoveArguments
+from clutch.network.rpc.torrent.rename import TorrentRename, TorrentRenameArguments
 from clutch.network.rpc.typing import FlatTrackerReplaceArg, TrackerReplace
 
 hyphenated_arguments: Sequence[str] = [
@@ -101,6 +105,86 @@ def convert_accessor(accessor: TorrentAccessor) -> Request:
 
     try:
         request['tag'] = accessor['tag']
+    except KeyError:
+        pass
+    return request
+
+
+def convert_add(command: TorrentAdd) -> Request:
+    def process_arguments(args: TorrentAddArguments) -> Mapping[str, str]:
+        result = _clone_and_convert_keys(args)
+        for (k, v) in result.items():
+            if isinstance(v, set):
+                result[k] = v
+                continue
+            result[k] = str(v)
+        return result
+
+    request = Request(method=command['method'])
+    request['arguments'] = process_arguments(command['arguments'])
+
+    try:
+        request['tag'] = command['tag']
+    except KeyError:
+        pass
+    return request
+
+
+def convert_move(command: TorrentMove) -> Request:
+    def process_arguments(args: TorrentMoveArguments) -> Mapping[str, str]:
+        result = _clone_and_convert_keys(args)
+        for (k, v) in result.items():
+            if isinstance(v, set):
+                result[k] = v
+                continue
+            result[k] = str(v)
+        return result
+
+    request = Request(method=command['method'])
+    request['arguments'] = process_arguments(command['arguments'])
+
+    try:
+        request['tag'] = command['tag']
+    except KeyError:
+        pass
+    return request
+
+
+def convert_remove(command: TorrentRemove) -> Request:
+    def process_arguments(args: TorrentRemoveArguments) -> Mapping[str, str]:
+        result = _clone_and_convert_keys(args)
+        for (k, v) in result.items():
+            if isinstance(v, set):
+                result[k] = v
+                continue
+            result[k] = str(v)
+        return result
+
+    request = Request(method=command['method'])
+    request['arguments'] = process_arguments(command['arguments'])
+
+    try:
+        request['tag'] = command['tag']
+    except KeyError:
+        pass
+    return request
+
+
+def convert_rename(command: TorrentRename) -> Request:
+    def process_arguments(args: TorrentRenameArguments) -> Mapping[str, str]:
+        result = _clone_and_convert_keys(args)
+        for (k, v) in result.items():
+            if isinstance(v, set):
+                result[k] = v
+                continue
+            result[k] = str(v)
+        return result
+
+    request = Request(method=command['method'])
+    request['arguments'] = process_arguments(command['arguments'])
+
+    try:
+        request['tag'] = command['tag']
     except KeyError:
         pass
     return request

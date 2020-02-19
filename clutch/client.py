@@ -1,6 +1,14 @@
 from typing import Optional
 
-from clutch.middle import convert_mutator, convert_action, convert_accessor
+from clutch.middle import (
+    convert_mutator,
+    convert_action,
+    convert_accessor,
+    convert_add,
+    convert_move,
+    convert_remove,
+    convert_rename,
+)
 from clutch.network.connection import Connection
 from clutch.network.rpc.message import Response, Request
 from clutch.network.rpc.torrent.accessor import (
@@ -12,7 +20,11 @@ from clutch.network.rpc.torrent.action import (
     TorrentActionMethod,
     TorrentActionArguments,
 )
+from clutch.network.rpc.torrent.add import TorrentAddArguments, TorrentAdd
+from clutch.network.rpc.torrent.move import TorrentMoveArguments, TorrentMove
 from clutch.network.rpc.torrent.mutator import TorrentMutator, TorrentMutatorArguments
+from clutch.network.rpc.torrent.remove import TorrentRemoveArguments, TorrentRemove
+from clutch.network.rpc.torrent.rename import TorrentRename, TorrentRenameArguments
 from clutch.network.session import TransmissionSession
 from clutch.network.utility import make_endpoint
 
@@ -73,4 +85,44 @@ class Client:
             accessor["tag"] = tag
 
         request: Request = convert_accessor(accessor)
+        return self.connection.send(request)
+
+    def torrent_add(
+        self, arguments: TorrentAddArguments, tag: int = None
+    ) -> Optional[Response]:
+        command = TorrentAdd(method="torrent-add", arguments=arguments)
+        if tag is not None:
+            command["tag"] = tag
+
+        request: Request = convert_add(command)
+        return self.connection.send(request)
+
+    def torrent_move(
+        self, arguments: TorrentMoveArguments, tag: int = None
+    ) -> Optional[Response]:
+        command = TorrentMove(method="torrent-move", arguments=arguments)
+        if tag is not None:
+            command["tag"] = tag
+
+        request: Request = convert_move(command)
+        return self.connection.send(request)
+
+    def torrent_remove(
+        self, arguments: TorrentRemoveArguments, tag: int = None
+    ) -> Optional[Response]:
+        command = TorrentRemove(method="torrent-remove", arguments=arguments)
+        if tag is not None:
+            command["tag"] = tag
+
+        request: Request = convert_remove(command)
+        return self.connection.send(request)
+
+    def torrent_rename(
+        self, arguments: TorrentRenameArguments, tag: int = None
+    ) -> Optional[Response]:
+        accessor = TorrentRename(method="torrent-rename", arguments=arguments)
+        if tag is not None:
+            accessor["tag"] = tag
+
+        request: Request = convert_rename(accessor)
         return self.connection.send(request)

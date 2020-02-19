@@ -1,4 +1,5 @@
 import logging
+
 # Enabling debugging at http.client level (requests->urllib3->http.client)
 # you will see the REQUEST, including HEADERS and DATA, and RESPONSE with HEADERS but without DATA.
 # the only thing missing will be the response.body which is not logged.
@@ -19,7 +20,7 @@ requests_log.propagate = True
 
 def test_retrieving_all_names():
     tag = 16
-    accessor_args: TorrentAccessorArguments = {'fields': {'name'}}
+    accessor_args: TorrentAccessorArguments = {"fields": {"name"}}
     client = Client(host="transmission")
 
     response: Response = client.torrent_accessor(accessor_args, tag)
