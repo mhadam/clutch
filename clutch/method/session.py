@@ -1,11 +1,11 @@
 from typing import Optional
 
 from clutch.method.method import MethodNamespace
+from clutch.method.typing.session.accessor import SessionAccessor
+from clutch.method.typing.session.mutator import SessionMutatorArguments, SessionMutator
+from clutch.method.typing.session.shared import SessionArguments
 from clutch.middle.session import convert_accessor, convert_mutator
 from clutch.network.rpc.message import Response, Request
-from clutch.network.rpc.session.shared import SessionArguments
-from clutch.network.rpc.session.accessor import SessionAccessor
-from clutch.network.rpc.session.mutator import SessionMutatorArguments, SessionMutator
 
 
 class SessionMethods(MethodNamespace):
@@ -22,7 +22,7 @@ class SessionMethods(MethodNamespace):
         return self._connection.send(request)
 
     def mutator(
-        self, arguments: SessionMutatorArguments = None, tag: int = None
+        self, arguments: SessionMutatorArguments, tag: int = None
     ) -> Optional[Response]:
         action = SessionMutator(method="session-set", arguments=arguments)
         if tag is not None:

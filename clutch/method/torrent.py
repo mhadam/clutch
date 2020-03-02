@@ -1,6 +1,13 @@
 from typing import Optional
 
 from clutch.method.method import MethodNamespace
+from clutch.method.typing.torrent.accessor import TorrentAccessorArguments, TorrentAccessor
+from clutch.method.typing.torrent.action import TorrentActionMethod, TorrentActionArguments, TorrentAction
+from clutch.method.typing.torrent.add import TorrentAddArguments, TorrentAdd
+from clutch.method.typing.torrent.move import TorrentMoveArguments, TorrentMove
+from clutch.method.typing.torrent.mutator import TorrentMutatorArguments, TorrentMutator
+from clutch.method.typing.torrent.remove import TorrentRemoveArguments, TorrentRemove
+from clutch.method.typing.torrent.rename import TorrentRenameArguments, TorrentRename
 from clutch.middle.torrent import (
     convert_mutator,
     convert_accessor,
@@ -11,20 +18,6 @@ from clutch.middle.torrent import (
     convert_rename,
 )
 from clutch.network.rpc.message import Response, Request
-from clutch.network.rpc.torrent.accessor import (
-    TorrentAccessorArguments,
-    TorrentAccessor,
-)
-from clutch.network.rpc.torrent.action import (
-    TorrentActionMethod,
-    TorrentActionArguments,
-    TorrentAction,
-)
-from clutch.network.rpc.torrent.add import TorrentAddArguments, TorrentAdd
-from clutch.network.rpc.torrent.move import TorrentMoveArguments, TorrentMove
-from clutch.network.rpc.torrent.mutator import TorrentMutatorArguments, TorrentMutator
-from clutch.network.rpc.torrent.remove import TorrentRemoveArguments, TorrentRemove
-from clutch.network.rpc.torrent.rename import TorrentRenameArguments, TorrentRename
 
 
 class TorrentMethods(MethodNamespace):

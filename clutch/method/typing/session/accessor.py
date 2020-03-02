@@ -1,5 +1,6 @@
-from typing import TypedDict, Literal, Tuple
-from clutch.network.rpc.session.shared import SessionArguments
+from typing import TypedDict, Literal
+
+from clutch.method.typing.session.shared import SessionArguments
 
 
 class SessionAccessorOptional(TypedDict, total=False):

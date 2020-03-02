@@ -1,13 +1,13 @@
 from typing import Dict, Any, Mapping, Sequence, Union, List
 
 from clutch.network.rpc.message import Request
-from clutch.network.rpc.torrent.accessor import TorrentAccessor, TorrentAccessorArguments
-from clutch.network.rpc.torrent.action import TorrentAction, TorrentActionArguments
-from clutch.network.rpc.torrent.add import TorrentAdd, TorrentAddArguments
-from clutch.network.rpc.torrent.move import TorrentMove, TorrentMoveArguments
-from clutch.network.rpc.torrent.mutator import TorrentMutator, TorrentMutatorArguments
-from clutch.network.rpc.torrent.remove import TorrentRemove, TorrentRemoveArguments
-from clutch.network.rpc.torrent.rename import TorrentRename, TorrentRenameArguments
+from clutch.method.typing.torrent.accessor import TorrentAccessor, TorrentAccessorArguments
+from clutch.method.typing.torrent.action import TorrentAction, TorrentActionArguments
+from clutch.method.typing.torrent.add import TorrentAdd, TorrentAddArguments
+from clutch.method.typing.torrent.move import TorrentMove, TorrentMoveArguments
+from clutch.method.typing.torrent.mutator import TorrentMutator, TorrentMutatorArguments
+from clutch.method.typing.torrent.remove import TorrentRemove, TorrentRemoveArguments
+from clutch.method.typing.torrent.rename import TorrentRename, TorrentRenameArguments
 from clutch.network.rpc.typing import FlatTrackerReplaceArg, TrackerReplace
 
 hyphenated_arguments: Sequence[str] = [

@@ -1,9 +1,9 @@
 from typing import Dict, Any, Mapping, Sequence
 
 from clutch.network.rpc.message import Request
-from clutch.network.rpc.session.accessor import SessionAccessor
-from clutch.network.rpc.session.mutator import SessionMutatorArguments, SessionMutator
-from clutch.network.rpc.session.shared import SessionArguments
+from clutch.method.typing.session.accessor import SessionAccessor
+from clutch.method.typing.session.mutator import SessionMutatorArguments, SessionMutator
+from clutch.method.typing.session.shared import SessionArguments
 
 
 hyphenated_arguments: Sequence[str] = [

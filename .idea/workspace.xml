@@ -2,13 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d6a9bc2-8003-453a-ab6b-ab28b5d98f5f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/clutch/method/queue.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/clutch.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/clutch.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clutch/method/typing/session/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clutch/method/typing/torrent/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clutch/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/clutch/client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clutch/method/method.py" beforeDir="false" afterPath="$PROJECT_DIR$/clutch/method/method.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clutch/method/misc.py" beforeDir="false" afterPath="$PROJECT_DIR$/clutch/method/misc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clutch/method/queue.py" beforeDir="false" afterPath="$PROJECT_DIR$/clutch/method/queue.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clutch/method/session.py" beforeDir="false" afterPath="$PROJECT_DIR$/clutch/method/session.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clutch/method/torrent.py" beforeDir="false" afterPath="$PROJECT_DIR$/clutch/method/torrent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clutch/middle/session.py" beforeDir="false" afterPath="$PROJECT_DIR$/clutch/middle/session.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clutch/middle/torrent.py" beforeDir="false" afterPath="$PROJECT_DIR$/clutch/middle/torrent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clutch/network/rpc/arguments.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clutch/network/rpc/method_name.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clutch/network/rpc/session/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/clutch/method/shared.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clutch/network/rpc/session/accessor.py" beforeDir="false" afterPath="$PROJECT_DIR$/clutch/method/typing/session/accessor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clutch/network/rpc/session/mutator.py" beforeDir="false" afterPath="$PROJECT_DIR$/clutch/method/typing/session/mutator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clutch/network/rpc/session/shared.py" beforeDir="false" afterPath="$PROJECT_DIR$/clutch/method/typing/session/shared.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clutch/network/rpc/torrent/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/clutch/method/typing/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clutch/network/rpc/torrent/accessor.py" beforeDir="false" afterPath="$PROJECT_DIR$/clutch/method/typing/torrent/accessor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clutch/network/rpc/torrent/action.py" beforeDir="false" afterPath="$PROJECT_DIR$/clutch/method/typing/torrent/action.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clutch/network/rpc/torrent/add.py" beforeDir="false" afterPath="$PROJECT_DIR$/clutch/method/typing/torrent/add.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clutch/network/rpc/torrent/move.py" beforeDir="false" afterPath="$PROJECT_DIR$/clutch/method/typing/torrent/move.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clutch/network/rpc/torrent/mutator.py" beforeDir="false" afterPath="$PROJECT_DIR$/clutch/method/typing/torrent/mutator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clutch/network/rpc/torrent/remove.py" beforeDir="false" afterPath="$PROJECT_DIR$/clutch/method/typing/torrent/remove.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clutch/network/rpc/torrent/rename.py" beforeDir="false" afterPath="$PROJECT_DIR$/clutch/method/typing/torrent/rename.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,11 +86,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/clutch/method/typing" />
       <recent name="$PROJECT_DIR$/clutch/method" />
       <recent name="$PROJECT_DIR$/docker/integration_resources/watch" />
       <recent name="$PROJECT_DIR$/docker/integration_resources/data" />
       <recent name="$PROJECT_DIR$/docker" />
-      <recent name="$PROJECT_DIR$/tests/endtoend" />
     </key>
   </component>
   <component name="RunManager" selected="Python.coroaverager3">
@@ -259,7 +277,7 @@
       <workItem from="1581470007590" duration="10995000" />
       <workItem from="1581637908778" duration="73706000" />
       <workItem from="1583109416560" duration="2578000" />
-      <workItem from="1583116071358" duration="5406000" />
+      <workItem from="1583116071358" duration="7981000" />
     </task>
     <servers />
   </component>

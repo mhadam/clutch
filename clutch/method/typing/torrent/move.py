@@ -1,6 +1,6 @@
-from typing import TypedDict, Literal, Sequence, Union
+from typing import TypedDict, Literal
 
-from clutch.network.rpc.torrent.action import IdsArg
+from clutch.method.typing.torrent.action import IdsArg
 
 
 class TorrentMoveArgumentsOptional(TypedDict, total=False):

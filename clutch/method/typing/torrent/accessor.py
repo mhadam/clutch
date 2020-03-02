@@ -1,6 +1,6 @@
 from typing import TypedDict, Literal, Set
 
-from clutch.network.rpc.torrent.action import IdsArg
+from clutch.method.typing.torrent.action import IdsArg
 
 AccessorField = Literal[
     "activity-date",
