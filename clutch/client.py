@@ -1,14 +1,18 @@
+from clutch.method.queue import QueueMethods
 from clutch.method.session import SessionMethods
 from clutch.method.torrent import TorrentMethods
 from clutch.network.connection import Connection
 from clutch.network.session import TransmissionSession
 from clutch.network.utility import make_endpoint
+from clutch.method.misc import MiscellaneousMethods
 
 
 class Client:
 
     session = SessionMethods()
     torrent = TorrentMethods()
+    queue = QueueMethods()
+    misc = MiscellaneousMethods()
 
     def __init__(
         self,

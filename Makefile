@@ -2,14 +2,14 @@ CMD_ARGUMENTS ?= $(cmd)
 
 .PHONY: shell help build rebuild service login test clean prune unit integration integration-shell
 
-shell:
-ifeq ($(CMD_ARGUMENTS),)
-	# no command is given, default to shell
-	docker-compose -p clutch run --rm testbed sh
-else
-	# run the command
-	docker-compose -p clutch run --rm testbed sh -c "$(CMD_ARGUMENTS)"
-endif
+# shell:
+# ifeq ($(CMD_ARGUMENTS),)
+# 	# no command is given, default to shell
+# 	docker-compose -p clutch run --rm testbed sh
+# else
+# 	# run the command
+# 	docker-compose -p clutch run --rm testbed sh -c "$(CMD_ARGUMENTS)"
+# endif
 
 rebuild:
 	# force a rebuild by passing --no-cache

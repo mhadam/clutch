@@ -2,24 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d6a9bc2-8003-453a-ab6b-ab28b5d98f5f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/clutch/method/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clutch/method/method.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clutch/method/misc.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clutch/method/session.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clutch/method/torrent.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clutch/network/rpc/session/accessor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clutch/network/rpc/session/mutator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clutch/method/queue.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/clutch.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/clutch.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clutch/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/clutch/client.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clutch/middle.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clutch/network/utility.py" beforeDir="false" afterPath="$PROJECT_DIR$/clutch/network/utility.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/endtoend/test_accessor.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/endtoend/test_accessor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/endtoend/test_mutator.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/endtoend/test_mutator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clutch/method/misc.py" beforeDir="false" afterPath="$PROJECT_DIR$/clutch/method/misc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clutch/method/session.py" beforeDir="false" afterPath="$PROJECT_DIR$/clutch/method/session.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +56,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -270,7 +259,7 @@
       <workItem from="1581470007590" duration="10995000" />
       <workItem from="1581637908778" duration="73706000" />
       <workItem from="1583109416560" duration="2578000" />
-      <workItem from="1583116071358" duration="2861000" />
+      <workItem from="1583116071358" duration="5406000" />
     </task>
     <servers />
   </component>
@@ -342,22 +331,22 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1398" height="303" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1583109362062" />
-    <state x="117" y="78" key="SettingsEditor" timestamp="1583110702994">
+    <state x="117" y="78" key="SettingsEditor" timestamp="1583122836955">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="117" y="78" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1583110702994" />
-    <state x="375" y="214" width="689" height="472" key="find.popup" timestamp="1581815500700">
+    <state x="117" y="78" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1583122836955" />
+    <state x="375" y="214" width="689" height="472" key="find.popup" timestamp="1583123425094">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="375" y="214" width="689" height="472" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1581815500700" />
+    <state x="375" y="214" width="689" height="472" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1583123425094" />
     <state width="600" height="424" key="javadoc.popup" timestamp="1580950923861">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="600" height="424" key="javadoc.popup/0.0.1440.900@0.0.1440.900" timestamp="1580950923861" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1583109358868">
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1583123538161">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1583109358868" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1583123538161" />
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.23.1440.832@0.23.1440.832" timestamp="1583109334405" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">

@@ -36,3 +36,9 @@ class SessionMethods(MethodNamespace):
         if tag is not None:
             request["tag"] = tag
         return self._connection.send(request)
+
+    def shutdown(self, tag: int = None) -> Optional[Response]:
+        request = Request(method="session-close")
+        if tag is not None:
+            request["tag"] = tag
+        return self._connection.send(request)
