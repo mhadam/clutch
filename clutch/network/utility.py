@@ -11,7 +11,6 @@ def make_endpoint(
 ) -> str:
     # any explicit keyword arguments override the default address
     url_info = urlsplit(address)
-    print(f"{url_info}")
     if scheme is None:
         scheme = url_info.scheme
     if host is None:

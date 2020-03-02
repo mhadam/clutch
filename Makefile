@@ -1,6 +1,6 @@
 CMD_ARGUMENTS ?= $(cmd)
 
-.PHONY: shell help build rebuild service login test clean prune unit integration
+.PHONY: shell help build rebuild service login test clean prune unit integration integration-shell
 
 shell:
 ifeq ($(CMD_ARGUMENTS),)
@@ -46,15 +46,21 @@ unit:
 
 integration:
 	docker build -f docker/clutch.df -t clutch-test .
-	docker run --rm --entrypoint "/bin/sh" clutch-test -c "mypy .; pytest tests/unit"
+	docker run --rm --entrypoint "/bin/sh" clutch-test -c "mypy .; pytest tests/integration"
 
 end-to-end:
 	docker-compose -f ./docker/docker-compose.yml up -d --force-recreate --no-deps --build testbed transmission
 	docker-compose -f ./docker/docker-compose.yml run --rm start_dependencies
 	docker-compose -f ./docker/docker-compose.yml run --rm testbed sh -c "mypy .; pytest tests/endtoend"
 
-test-shell:
-	docker-compose -f ./docker/docker-compose.yml run testbed --entrypoint "/bin/sh"
+package-shell:
+	docker build -f docker/clutch.df -t clutch-test .
+	docker run -it --rm --entrypoint "/bin/sh" clutch-test
+
+integration-shell:
+	docker-compose -f ./docker/docker-compose.yml up -d --force-recreate --no-deps --build testbed transmission
+	docker-compose -f ./docker/docker-compose.yml run --rm start_dependencies
+	docker-compose -f ./docker/docker-compose.yml run --rm testbed
 
 transmission-shell:
 	docker-compose -f ./docker/docker-compose.yml run transmission --entrypoint "/bin/sh"

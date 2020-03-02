@@ -23,7 +23,7 @@ def test_server_returns_same_tag():
     mutator_args: TorrentMutatorArguments = {}
     client = Client(host="transmission")
 
-    response: Response = client.torrent_mutator(mutator_args, tag)
+    response: Response = client.torrent.mutator(mutator_args, tag)
 
     assert response["tag"] == tag
 

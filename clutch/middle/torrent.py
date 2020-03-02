@@ -1,4 +1,4 @@
-from typing import Optional, Dict, Any, Mapping, Sequence, Union, List
+from typing import Dict, Any, Mapping, Sequence, Union, List
 
 from clutch.network.rpc.message import Request
 from clutch.network.rpc.torrent.accessor import TorrentAccessor, TorrentAccessorArguments

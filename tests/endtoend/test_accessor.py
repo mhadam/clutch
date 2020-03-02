@@ -23,7 +23,7 @@ def test_retrieving_all_names():
     accessor_args: TorrentAccessorArguments = {"fields": {"name"}}
     client = Client(host="transmission")
 
-    response: Response = client.torrent_accessor(accessor_args, tag)
+    response: Response = client.torrent.accessor(accessor_args, tag)
 
     assert response["result"] == "success"
     assert response["tag"] == tag
