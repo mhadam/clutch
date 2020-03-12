@@ -17,5 +17,5 @@ class TorrentMoveOptional(TypedDict, total=False):
 
 
 class TorrentMove(TorrentMoveOptional):
-    method: Literal["torrent-move"]
+    method: Literal["torrent-set-location"]
     arguments: TorrentMoveArguments

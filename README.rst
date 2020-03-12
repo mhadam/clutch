@@ -4,7 +4,9 @@ Clutch
 Quick start
 ===========
 
-Running the client is as easy as::
+Running the client is as easy as:
+
+::
 
 >>> from clutch.client import Client
 >>> client = Client(address="http://localhost:9091/transmission")
@@ -13,8 +15,10 @@ If you find the client isn't connecting, make sure you're entering the address c
 
 .. _urllib.parse.urlparse: https://docs.python.org/3/library/urllib.parse.html#urllib.parse.urlparse
 
-The client groups RPC methods into: torrent, session, queue and misc.
+RPC methods are separated into groups: torrent, session, queue and misc.
 
-Method groups are available right on the client - they're used like this:
+Methods are called by first specifying a group:
+
+::
 
 >>> client.torrent.add(...)

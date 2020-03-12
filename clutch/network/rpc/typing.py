@@ -1,7 +1,9 @@
-from typing import Union, Sequence, NamedTuple
+from dataclasses import dataclass
+from typing import Union, Sequence
 
 
-class TrackerReplace(NamedTuple):
+@dataclass
+class TrackerReplace:
     trackerId: int
     announceUrl: str
 

@@ -19,5 +19,7 @@ class QueueMethods(MethodNamespace):
     def move(
         self, movement: QueueMovement, ids: IdsArg, tag: int = None
     ) -> Optional[Response]:
-        request = construct_request(method=movement.value, arguments={"ids": ids}, tag=tag)
+        request = construct_request(
+            method=movement.value, arguments={"ids": ids}, tag=tag
+        )
         return self._connection.send(request)

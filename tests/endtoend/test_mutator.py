@@ -1,6 +1,6 @@
 from clutch.client import Client
 from clutch.network.rpc.message import Response
-from clutch.network.rpc.torrent.mutator import TorrentMutatorArguments
+from clutch.method.typing.torrent.mutator import TorrentMutatorArguments
 
 import logging
 

@@ -22,5 +22,6 @@ class TorrentActionRequired(TypedDict):
 
 
 class TorrentAction(TorrentActionRequired, total=False):
+    # omitting arguments selects all torrents
     arguments: TorrentActionArguments
     tag: int

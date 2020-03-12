@@ -9,10 +9,10 @@ from clutch.method.misc import MiscellaneousMethods
 
 class Client:
 
-    session = SessionMethods()
-    torrent = TorrentMethods()
-    queue = QueueMethods()
-    misc = MiscellaneousMethods()
+    session: SessionMethods = SessionMethods()
+    torrent: TorrentMethods = TorrentMethods()
+    queue: QueueMethods = QueueMethods()
+    misc: MiscellaneousMethods = MiscellaneousMethods()
 
     def __init__(
         self,

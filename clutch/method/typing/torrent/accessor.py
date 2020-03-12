@@ -84,6 +84,7 @@ class TorrentAccessorArgumentsRequired(TypedDict):
 
 class TorrentAccessorArguments(TorrentAccessorArgumentsRequired, total=False):
     ids: IdsArg
+    format: Literal["objects", "table"]
 
 
 class TorrentAccessorMethod(TypedDict):

@@ -15,5 +15,5 @@ class MiscellaneousMethods(MethodNamespace):
         return self._connection.send(request)
 
     def free_space(self, path: str, tag: int = None) -> Optional[Response]:
-        request = construct_request("free-space", {"path": path}, tag)
+        request = construct_request("free-space", {"path": path}, tag=tag)
         return self._connection.send(request)

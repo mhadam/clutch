@@ -3,7 +3,7 @@ from unittest.mock import create_autospec
 
 from clutch.network.connection import Connection
 from clutch.network.rpc.message import Request, Response
-from clutch.network.rpc.torrent.action import TorrentActionMethod
+from clutch.method.typing.torrent.action import TorrentActionMethod
 from clutch.network.session import TransmissionSession
 
 

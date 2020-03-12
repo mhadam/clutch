@@ -1,8 +1,15 @@
+from dataclasses import dataclass
 from typing import TypedDict, Literal, Sequence, Union
 
 
+@dataclass
+class Cookie:
+    name: str
+    content: str
+
+
 class TorrentAddArgumentsOptional(TypedDict, total=False):
-    cookies: str
+    cookies: Sequence[Cookie]
     download_dir: str
     paused: bool
     peer_limit: int
