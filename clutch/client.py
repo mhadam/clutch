@@ -1,10 +1,10 @@
-from clutch.method.queue import QueueMethods
-from clutch.method.session import SessionMethods
-from clutch.method.torrent import TorrentMethods
+from clutch.method.group.queue import QueueMethods
+from clutch.method.group.session import SessionMethods
+from clutch.method.group.torrent import TorrentMethods
 from clutch.network.connection import Connection
 from clutch.network.session import TransmissionSession
 from clutch.network.utility import make_endpoint
-from clutch.method.misc import MiscellaneousMethods
+from clutch.method.group.misc import MiscellaneousMethods
 
 
 class Client:

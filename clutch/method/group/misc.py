@@ -1,7 +1,7 @@
 from typing import Optional
 
-from clutch.method.method import MethodNamespace
-from clutch.method.shared import construct_request
+from clutch.method.group.method import MethodNamespace
+from clutch.method.group.shared import construct_request
 from clutch.network.rpc.message import Response
 
 

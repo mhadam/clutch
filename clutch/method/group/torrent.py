@@ -6,8 +6,8 @@ from clutch.method.convert.argument.torrent import (
     convert_add,
     convert_remove,
 )
-from clutch.method.method import MethodNamespace
-from clutch.method.shared import construct_request
+from clutch.method.group.method import MethodNamespace
+from clutch.method.group.shared import construct_request
 from clutch.method.typing.torrent.accessor import TorrentAccessorArguments
 from clutch.method.typing.torrent.action import (
     TorrentActionMethod,

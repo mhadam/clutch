@@ -1,8 +1,8 @@
 from typing import Optional
 
 from clutch.method.convert.argument.session import convert_accessor, convert_mutator
-from clutch.method.method import MethodNamespace
-from clutch.method.shared import construct_request
+from clutch.method.group.method import MethodNamespace
+from clutch.method.group.shared import construct_request
 from clutch.method.typing.session.accessor import SessionAccessorArguments
 from clutch.method.typing.session.mutator import SessionMutatorArguments
 from clutch.network.rpc.message import Response
