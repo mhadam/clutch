@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "transmission-clutch"
-version = "2.0.0.dev3"
-description = "An RPC client library for the Transmission bittorrent client"
+version = "2.0.0"
+description = "An RPC client library for the Transmission BitTorrent client"
 authors = ["mhadam <michael@hadam.us>"]
 license = "MIT"
 packages = [{ include = "clutch" }]
@@ -13,7 +13,6 @@ requests = "^2.22.0"
 [tool.poetry.dev-dependencies]
 pytest = "^4.6"
 mypy = "^0.761"
-pylint = "^2.4.4"
 
 [build-system]
 requires = ["poetry>=0.12"]
