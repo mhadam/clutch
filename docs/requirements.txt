@@ -1,0 +1,2 @@
+sphinx_autodoc_typehints==1.10.3
+mypy==0.770
