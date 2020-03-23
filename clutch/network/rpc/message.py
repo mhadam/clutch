@@ -1,4 +1,7 @@
-from typing import TypedDict, Mapping, Any
+from dataclasses import dataclass
+from typing import TypedDict, Mapping, Any, TypeVar, Generic
+
+T = TypeVar("T", bound=Mapping[str, object])
 
 
 class OptionalMessageFields(TypedDict, total=False):
@@ -14,7 +17,10 @@ class Request(OptionalMessageFields):
     method: str
 
 
-class Response(OptionalMessageFields):
+@dataclass
+class Response(Generic[T]):
     """RPC response container"""
 
     result: str
+    arguments: T = None
+    tag: int = None

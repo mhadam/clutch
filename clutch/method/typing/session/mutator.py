@@ -3,10 +3,6 @@ from typing import TypedDict, Literal
 from clutch.method.typing.session.shared import Units
 
 
-class SessionMutatorOptional(TypedDict, total=False):
-    tag: int
-
-
 class SessionMutatorArguments(TypedDict, total=False):
     alt_speed_down: int
     alt_speed_enabled: bool
@@ -51,8 +47,3 @@ class SessionMutatorArguments(TypedDict, total=False):
     trash_original_torrent_files: bool
     units: Units
     utp_enabled: bool
-
-
-class SessionMutator(SessionMutatorOptional):
-    method: Literal["session-set"]
-    arguments: SessionMutatorArguments

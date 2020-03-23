@@ -34,10 +34,18 @@ TorrentAddArguments = Union[
 ]
 
 
-class TorrentAddOptional(TypedDict, total=False):
-    tag: int
+class Torrent(TypedDict):
+    id: int
+    name: str
+    hash_string: str
 
 
-class TorrentAdd(TorrentAddOptional):
-    method: Literal["torrent-add"]
-    arguments: TorrentAddArguments
+class TorrentAddedResponse(TypedDict):
+    torrent_added: Torrent
+
+
+class TorrentDuplicateResponse(TypedDict):
+    torrent_duplicated: Torrent
+
+
+TorrentAddResponse = Union[TorrentAddedResponse, TorrentDuplicateResponse]

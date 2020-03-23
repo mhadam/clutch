@@ -15,20 +15,16 @@ def _encode_request(rpc_request: Request) -> bytes:
     ).encode("utf-8")
 
 
-def _convert_to_domain(response: Mapping[str, Any]) -> Response:
-    result: Response = Response(result=response["result"])  # this is confusing to read
+def _convert_to_domain(response: Mapping[str, Any]) -> Response[Mapping[str, object]]:
+    output = Response(result=response["result"])
     try:
-        result["arguments"] = response["arguments"]
+        output.arguments = response["arguments"]
+        output.tag = response["tag"]
     except KeyError:
         # TODO: log here possibly
         pass
 
-    try:
-        result["tag"] = response["tag"]
-    except KeyError:
-        pass
-
-    return result
+    return output
 
 
 def _validate_response(response: Mapping[str, Any]) -> bool:
@@ -51,7 +47,7 @@ class Connection:
         self.endpoint = endpoint
         self.session = session
 
-    def send(self, request: Request) -> Optional[Response]:
+    def send(self, request: Request) -> Optional[Response[Mapping[str, object]]]:
         response = self.session.post(self.endpoint, data=_encode_request(request))
         try:
             decoded_response = json.loads(response.text)

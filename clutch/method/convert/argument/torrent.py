@@ -1,6 +1,6 @@
 from typing import Mapping, Sequence, Union, List
 
-from clutch.method.convert.shared import convert_arguments, normalize_key
+from clutch.method.convert.argument.shared import convert_arguments, normalize_key
 from clutch.method.typing.torrent.accessor import TorrentAccessorArguments
 from clutch.method.typing.torrent.add import TorrentAddArguments
 from clutch.method.typing.torrent.mutator import TorrentMutatorArguments
@@ -36,12 +36,13 @@ def convert_mutator(arguments: TorrentMutatorArguments) -> Mapping[str, object]:
 
 def convert_accessor(arguments: TorrentAccessorArguments) -> Mapping[str, object]:
     def convert_fields(fields: Sequence[str]) -> Sequence[str]:
-        return [
+        result = [
             normalize_key(
-                x, hyphenate=frozenset({"peer_limit"}), default_camelcase=True
+                key, hyphenate=frozenset({"peer_limit"}), default_camelcase=True
             )
-            for x in fields
+            for key in fields
         ]
+        return result
 
     return convert_arguments(arguments, {"fields": convert_fields})
 

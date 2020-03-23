@@ -60,7 +60,7 @@ package-shell:
 integration-shell:
 	docker-compose -f ./docker/docker-compose.yml up -d --force-recreate --no-deps --build testbed transmission
 	docker-compose -f ./docker/docker-compose.yml run --rm start_dependencies
-	docker-compose -f ./docker/docker-compose.yml run --rm testbed
+	docker-compose -f ./docker/docker-compose.yml run --rm testbed sh -c "python -i client_setup.py"
 
 transmission-shell:
 	docker-compose -f ./docker/docker-compose.yml run transmission --entrypoint "/bin/sh"

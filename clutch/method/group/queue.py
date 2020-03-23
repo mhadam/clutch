@@ -1,5 +1,7 @@
 from enum import Enum, unique
-from typing import Optional
+from typing import Optional, Mapping
+
+from mypy.types import NoneType
 
 from clutch.method.group.method import MethodNamespace
 from clutch.method.group.shared import construct_request
@@ -18,7 +20,8 @@ class QueueMovement(Enum):
 class QueueMethods(MethodNamespace):
     def move(
         self, movement: QueueMovement, ids: IdsArg, tag: int = None
-    ) -> Optional[Response]:
+    ) -> Response[Mapping[str, object]]:
+        """Change the position of one or more torrents in the queue."""
         request = construct_request(
             method=movement.value, arguments={"ids": ids}, tag=tag
         )

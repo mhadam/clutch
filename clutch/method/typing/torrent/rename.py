@@ -1,18 +1,13 @@
-from typing import TypedDict, Literal
-
-from clutch.method.typing.torrent.action import IdsArg
+from typing import TypedDict, Literal, Union, Sequence
 
 
 class TorrentRenameArguments(TypedDict):
-    ids: IdsArg
+    ids: Sequence[Union[str, int]]
     path: str
     name: str
 
 
-class TorrentRenameOptional(TypedDict, total=False):
-    tag: int
-
-
-class TorrentRename(TorrentRenameOptional):
-    method: Literal["torrent-rename"]
-    arguments: TorrentRenameArguments
+class TorrentRenameResponse(TypedDict):
+    path: str
+    name: str
+    id: int

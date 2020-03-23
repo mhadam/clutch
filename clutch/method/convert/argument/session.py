@@ -1,6 +1,6 @@
 from typing import Mapping
 
-from clutch.method.convert.shared import convert_arguments
+from clutch.method.convert.argument.shared import convert_arguments
 from clutch.method.typing.session.accessor import SessionAccessorArguments
 from clutch.method.typing.session.mutator import SessionMutatorArguments
 from clutch.method.typing.session.shared import Units

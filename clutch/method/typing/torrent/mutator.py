@@ -26,12 +26,3 @@ class TorrentMutatorArguments(TypedDict, total=False):
     tracker_replace: Sequence[TrackerReplace]
     upload_limit: int
     upload_limited: bool
-
-
-class TorrentMutatorRequired(TypedDict):
-    method: Literal["torrent-set"]
-
-
-class TorrentMutator(TorrentMutatorRequired, total=False):
-    arguments: TorrentMutatorArguments
-    tag: int
