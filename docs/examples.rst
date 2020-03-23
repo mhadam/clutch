@@ -1,4 +1,0 @@
-Examples
-========
-
-Hi examples here
