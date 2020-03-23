@@ -3,6 +3,7 @@ name = "transmission-clutch"
 version = "2.0.0"
 description = "An RPC client library for the Transmission BitTorrent client"
 authors = ["mhadam <michael@hadam.us>"]
+readme = "README.rst"
 license = "MIT"
 packages = [{ include = "clutch" }]
 
