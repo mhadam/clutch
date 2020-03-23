@@ -4,6 +4,12 @@ Clutch
 Quick start
 ===========
 
+Install the package:
+
+::
+
+$ pip install transmission-clutch
+
 Running the client is as easy as:
 
 ::
