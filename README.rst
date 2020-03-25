@@ -22,18 +22,24 @@ Quick start
 
 Install the package:
 
-::
+.. code-block:: console
 
-$ pip install transmission-clutch
+    $ pip install transmission-clutch
 
-Running the client is as easy as:
+Make a client:
 
-::
+.. code-block:: python
 
->>> from clutch.client import Client
->>> client = Client(address="http://localhost:9091/transmission")
+    from clutch.client import Client
+    client = Client()
 
-If you find the client isn't connecting, make sure you're entering the address correctly. Reference `urllib.parse.urlparse`_ for parsing rules.
+If you find the client isn't connecting (an error will be raised), make sure you're entering the address correctly. Reference `urllib.parse.urlparse`_ for parsing rules.
+
+You can specify Transmission's address when making the client:
+
+.. code-block:: python
+
+    client = Client(address="http://localhost:9091/transmission/rpc")
 
 .. _urllib.parse.urlparse: https://docs.python.org/3/library/urllib.parse.html#urllib.parse.urlparse
 
@@ -41,6 +47,6 @@ RPC methods are separated into groups: torrent, session, queue and misc.
 
 Methods are called by first specifying a group:
 
-::
+.. code-block:: python
 
->>> client.torrent.add(...)
+    client.torrent.add(...)
