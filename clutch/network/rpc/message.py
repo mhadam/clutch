@@ -1,26 +1,31 @@
-from dataclasses import dataclass
-from typing import TypedDict, Mapping, Any, TypeVar, Generic
+from typing import TypeVar, Generic, Optional
 
-T = TypeVar("T", bound=Mapping[str, object])
+from pydantic import validator
+from pydantic.generics import GenericModel
 
+from clutch.network.rpc.convert import normalize_arguments
 
-class OptionalMessageFields(TypedDict, total=False):
-    """RPC message optional fields"""
-
-    arguments: Mapping[str, Any]
-    tag: int
+T = TypeVar("T")
 
 
-class Request(OptionalMessageFields):
+class Request(GenericModel, Generic[T]):
     """RPC request container"""
 
     method: str
+    arguments: Optional[T] = None
+    tag: Optional[int] = None
 
 
-@dataclass
-class Response(Generic[T]):
+class Response(GenericModel, Generic[T]):
     """RPC response container"""
 
     result: str
-    arguments: T = None
-    tag: int = None
+    arguments: Optional[T] = None
+    tag: Optional[int] = None
+
+    @validator("arguments", pre=True)
+    def fields_underscored(cls, v):
+        if v is not None:
+            return normalize_arguments(v)
+        else:
+            return v
