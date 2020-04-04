@@ -16,7 +16,6 @@ class Connection:
         self.session = session
 
     def send(self, request: Request, model: Type[T] = None) -> Response[T]:
-        print(request.json(by_alias=True, exclude_none=True))
         response = self.session.post(
             self.endpoint,
             data=request.json(by_alias=True, exclude_none=True).encode("utf-8"),
