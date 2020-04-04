@@ -1,10 +1,8 @@
-from typing import Mapping, TypeVar
-
-T = TypeVar("T", bound=Mapping[str, object], contravariant=True)
+from typing import Mapping
 
 
 def combine_arguments(
-    arguments: Mapping[str, object] = None, /, **kwargs
+    arguments: Mapping[str, object] = None, **kwargs
 ) -> Mapping[str, object]:
     if arguments is None:
         arguments = {}
