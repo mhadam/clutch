@@ -3,8 +3,8 @@ from unittest.mock import create_autospec
 
 from clutch.network.connection import Connection
 from clutch.network.rpc.message import Request, Response
-from clutch.method.typing.torrent.action import TorrentActionMethod
 from clutch.network.session import TransmissionSession
+from clutch.schema.user.method.torrent.action import TorrentActionMethod
 
 
 def test_connection_marshals_requests_and_responses():

@@ -13,6 +13,7 @@ packages = [{ include = "clutch" }]
 python = "^3.6"
 requests = "^2.22.0"
 mypy = "^0.761"
+pydantic = "^1.4"
 
 [tool.poetry.dev-dependencies]
 pytest = "^4.6"

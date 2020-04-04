@@ -7,7 +7,7 @@ from http.client import HTTPConnection
 
 from clutch.client import Client
 from clutch.network.rpc.message import Response
-from clutch.method.typing.torrent.accessor import TorrentAccessorArguments
+from clutch.schema.user.method.torrent.accessor import TorrentAccessorArguments
 
 HTTPConnection.debuglevel = 1  # type: ignore
 
