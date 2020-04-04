@@ -7,14 +7,14 @@ BinaryDataRateUnits = Tuple[
     Literal["KiB/s"], Literal["MiB/s"], Literal["GiB/s"], Literal["TiB/s"]
 ]
 DecimalDataRateUnits = Tuple[
-    Literal["kB/s"], Literal["MB/s"], Literal["GB/s"], Literal["TB/s"]
+    Literal["kB/s", "KB/s"], Literal["MB/s"], Literal["GB/s"], Literal["TB/s"]
 ]
 DataRateUnits = Union[BinaryDataRateUnits, DecimalDataRateUnits]
 
 BinaryDataSizeUnits = Tuple[
     Literal["KiB"], Literal["MiB"], Literal["GiB"], Literal["TiB"]
 ]
-DecimalDataSizeUnits = Tuple[Literal["kB"], Literal["MB"], Literal["GB"], Literal["TB"]]
+DecimalDataSizeUnits = Tuple[Literal["kB", "KB"], Literal["MB"], Literal["GB"], Literal["TB"]]
 DataSizeUnits = Union[BinaryDataSizeUnits, DecimalDataSizeUnits]
 
 ByteDefinition = Literal[1000, 1024]
