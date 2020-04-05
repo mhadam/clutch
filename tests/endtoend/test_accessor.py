@@ -7,7 +7,6 @@ from http.client import HTTPConnection
 
 from clutch.client import Client
 from clutch.network.rpc.message import Response
-from clutch.schema.user.method.torrent.accessor import TorrentAccessorArguments
 
 HTTPConnection.debuglevel = 1  # type: ignore
 
@@ -18,14 +17,25 @@ requests_log.setLevel(logging.DEBUG)
 requests_log.propagate = True
 
 
-def test_retrieving_all_names():
+def test_retrieve_all_fields():
     tag = 16
-    accessor_args: TorrentAccessorArguments = {"fields": {"name"}}
     client = Client(host="transmission")
 
-    response: Response = client.torrent.accessor(accessor_args, tag)
+    response: Response = client.torrent.accessor(all_fields=True, tag=tag)
 
-    assert response["result"] == "success"
-    assert response["tag"] == tag
-    assert "little_women" in {x["name"] for x in response["arguments"]["torrents"]}
-    assert "ion" in {x["name"] for x in response["arguments"]["torrents"]}
+    assert response.result == "success"
+    assert response.tag == tag
+    assert "little_women" in {x["name"] for x in response.dict(exclude_none=True)["arguments"]["torrents"]}
+    assert "ion" in {x["name"] for x in response.dict(exclude_none=True)["arguments"]["torrents"]}
+
+
+def test_retrieve_two_fields():
+    tag = 16
+    client = Client(host="transmission")
+
+    response: Response = client.torrent.accessor(fields=['id', 'name'], tag=tag)
+
+    assert response.result == "success"
+    assert response.tag == tag
+    assert 'id' in response.dict(exclude_none=True)["arguments"]["torrents"][0]
+    assert 'name' in response.dict(exclude_none=True)["arguments"]["torrents"][0]
