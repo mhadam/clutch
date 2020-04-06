@@ -1,6 +1,6 @@
 from typing import Set, Sequence
-from clutch.compat import Literal, TypedDict
 
+from clutch.compat import Literal, TypedDict
 from clutch.schema.user.method.shared import IdsArg
 
 AccessorField = Literal[

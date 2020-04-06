@@ -1,7 +1,8 @@
 from typing import Tuple, Union, Optional
-from clutch.compat import Literal
 
 from pydantic import BaseModel
+
+from clutch.compat import Literal
 
 BinaryDataRateUnits = Tuple[
     Literal["KiB/s"], Literal["MiB/s"], Literal["GiB/s"], Literal["TiB/s"]
@@ -14,7 +15,9 @@ DataRateUnits = Union[BinaryDataRateUnits, DecimalDataRateUnits]
 BinaryDataSizeUnits = Tuple[
     Literal["KiB"], Literal["MiB"], Literal["GiB"], Literal["TiB"]
 ]
-DecimalDataSizeUnits = Tuple[Literal["kB", "KB"], Literal["MB"], Literal["GB"], Literal["TB"]]
+DecimalDataSizeUnits = Tuple[
+    Literal["kB", "KB"], Literal["MB"], Literal["GB"], Literal["TB"]
+]
 DataSizeUnits = Union[BinaryDataSizeUnits, DecimalDataSizeUnits]
 
 ByteDefinition = Literal[1000, 1024]

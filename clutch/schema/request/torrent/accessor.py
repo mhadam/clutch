@@ -1,8 +1,8 @@
 from typing import Optional, Set
-from clutch.compat import Literal
 
 from pydantic import BaseModel, Field, validator
 
+from clutch.compat import Literal
 from clutch.network.rpc.convert import to_hyphen, to_camel
 from clutch.schema.user.method.shared import IdsArg
 

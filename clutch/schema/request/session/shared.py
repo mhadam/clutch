@@ -1,7 +1,8 @@
 from typing import Tuple
-from clutch.compat import Literal
 
 from pydantic import BaseModel, Field
+
+from clutch.compat import Literal
 
 DataRateUnits = Tuple[
     Literal["KB/s"], Literal["MB/s"], Literal["GB/s"], Literal["TB/s"]
