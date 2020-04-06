@@ -1,8 +1,8 @@
 from typing import Set, Optional
-from clutch.compat import Literal
 
 from pydantic import BaseModel, Field, validator
 
+from clutch.compat import Literal
 from clutch.network.rpc.convert import to_camel, to_hyphen
 
 SessionAccessorFields = Set[

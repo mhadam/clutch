@@ -18,9 +18,9 @@ def test_connection_marshals_requests_and_responses():
     response: Optional[Response] = connection.send(request)
 
     assert response is not None
-    assert response.arguments['test'] == 'response'
+    assert response.arguments["test"] == "response"
     assert response.tag == 5
-    assert response.result == 'success'
+    assert response.result == "success"
 
 
 def test_connection_marshals_types():
@@ -35,6 +35,9 @@ def test_connection_marshals_types():
 
     assert response is not None
     assert isinstance(response.arguments, TorrentAccessorResponse)
-    assert response.arguments.dict(exclude_none=True)['torrents'] == [{'id': 1}, {'id': 2}]
+    assert response.arguments.dict(exclude_none=True)["torrents"] == [
+        {"id": 1},
+        {"id": 2},
+    ]
     assert response.tag == 5
-    assert response.result == 'success'
+    assert response.result == "success"

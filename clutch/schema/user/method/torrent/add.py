@@ -1,4 +1,5 @@
 from typing import Sequence, Union
+
 from clutch.compat import TypedDict
 
 

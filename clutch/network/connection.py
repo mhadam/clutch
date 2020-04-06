@@ -1,9 +1,8 @@
 from typing import TypeVar
 
-from clutch.compat import Type
-
 from pydantic import BaseModel
 
+from clutch.compat import Type
 from clutch.network.rpc.message import Response, Request
 from clutch.network.session import TransmissionSession
 
