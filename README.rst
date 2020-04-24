@@ -5,16 +5,16 @@ Clutch
     :target: https://clutch.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
 
-.. image:: https://img.shields.io/pypi/v/transmission-clutch.svg?style=flat-square
+.. image:: https://img.shields.io/pypi/v/transmission-clutch.svg
     :target: https://pypi.org/project/transmission-clutch
 
-.. image:: https://img.shields.io/pypi/pyversions/transmission-clutch.svg?style=flat-square
+.. image:: https://img.shields.io/pypi/pyversions/transmission-clutch.svg
     :target: https://pypi.org/project/transmission-clutch
 
 .. image:: https://img.shields.io/badge/code%20style-black-000000.svg
     :target: https://github.com/ambv/black
 
-.. image:: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
+.. image:: https://img.shields.io/badge/license-MIT-blue.svg
     :target: https://en.wikipedia.org/wiki/MIT_License
 
 .. image:: https://img.shields.io/pypi/dm/transmission-clutch
