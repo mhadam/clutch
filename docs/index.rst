@@ -71,7 +71,10 @@ Now issue a command to Transmission:
 
 .. code-block:: python
 
-    >>> client.torrent.accessor(fields=['id', 'files'], ids=[1])
-    Response(result='success', arguments={'torrents': [{'files': [{'bytes_completed': 1053440, 'length': 1053440, 'name': 'little_women/little_women.txt'}], 'id': 1}]}, tag=None)
+    >>> client.torrent.accessor(fields=['id', 'files'], ids=[1]).dict(exclude_none=True)
+    {'result': 'success', 'arguments': {'torrents': [{'files': [{'bytes_completed': 1053440, 'length': 1053440, 'name': 'little_women/little_women.txt'}], 'id': 1}]}}
+    >>> client.torrent.accessor(fields=['id', 'files'], ids=[1]).json(exclude_none=True)
+    '{"result": "success", "arguments": {"torrents": [{"files": [{"bytes_completed": 1053440, "length": 1053440, "name": "little_women/little_women.txt"}], "id": 1}]}}'
+
 .. _RPC: https://en.wikipedia.org/wiki/Remote_procedure_call
 .. _`Transmission BitTorrent client`: https://transmissionbt.com

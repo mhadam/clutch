@@ -1,9 +1,7 @@
 clutch
 ======
 
-
-
 .. toctree::
-    :maxdepth: 4
+   :maxdepth: 4
 
-    clutch
+   clutch
