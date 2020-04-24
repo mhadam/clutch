@@ -3,23 +3,27 @@ Clutch
 
 .. image:: https://readthedocs.org/projects/clutch/badge/?version=latest
     :target: https://clutch.readthedocs.io/en/latest/?badge=latest
-    :alt: Documentation Status
+    :alt: Documentation badge
 
 .. image:: https://img.shields.io/pypi/v/transmission-clutch.svg
     :target: https://pypi.org/project/transmission-clutch
+    :alt: PyPI badge
 
 .. image:: https://img.shields.io/pypi/pyversions/transmission-clutch.svg
     :target: https://pypi.org/project/transmission-clutch
+    :alt: PyPI versions badge
 
 .. image:: https://img.shields.io/badge/code%20style-black-000000.svg
     :target: https://github.com/ambv/black
+    :alt: Black formatter badge
 
-.. image:: https://img.shields.io/badge/license-MIT-blue.svg
+.. image:: https://img.shields.io/pypi/l/transmission-clutch.svg
     :target: https://en.wikipedia.org/wiki/MIT_License
+    :alt: License badge
 
-.. image:: https://img.shields.io/pypi/dm/transmission-clutch
+.. image:: https://img.shields.io/pypi/dm/transmission-clutch.svg
     :target: https://pypistats.org/packages/transmission-clutch
-    :alt: PyPI - Downloads
+    :alt: PyPI downloads badge
 
 Quick start
 ===========

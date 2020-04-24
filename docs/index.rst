@@ -8,17 +8,14 @@ Clutch - Transmission RPC for Python
 
 Version |release|.
 
-.. image:: https://img.shields.io/pypi/v/transmission-clutch.svg?style=flat-square
+.. image:: https://img.shields.io/pypi/v/transmission-clutch.svg
     :target: https://pypi.org/project/transmission-clutch
 
-.. image:: https://img.shields.io/pypi/pyversions/transmission-clutch.svg?style=flat-square
+.. image:: https://img.shields.io/pypi/pyversions/transmission-clutch.svg
     :target: https://pypi.org/project/transmission-clutch
 
-.. image:: https://img.shields.io/badge/license-BSD-blue.svg?style=flat-square
-    :target: https://en.wikipedia.org/wiki/BSD_License
-
-.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
-    :target: https://github.com/ambv/black
+.. image:: https://img.shields.io/pypi/l/transmission-clutch
+    :alt: PyPI - License
 
 -----
 
