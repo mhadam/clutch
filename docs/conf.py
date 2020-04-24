@@ -32,7 +32,6 @@ release = "3.0.0"
 extensions = [
     "sphinx.ext.autodoc",
     "sphinx_autodoc_typehints",
-    "sphinx_autodoc_pydantic"
 ]
 
 always_document_param_types = True
