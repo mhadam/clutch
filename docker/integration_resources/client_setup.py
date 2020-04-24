@@ -1,3 +1,3 @@
-from clutch.client import Client
+from clutch import Client
 
 client = Client(host="transmission")

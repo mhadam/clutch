@@ -64,7 +64,7 @@ Import the package and make a client:
 
 .. code-block:: python
 
-    from clutch.client import Client
+    from clutch import Client
     client = Client(address="http://localhost:9091/transmission/rpc")
 
 Now issue a command to Transmission:

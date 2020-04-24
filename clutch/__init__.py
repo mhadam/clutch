@@ -1,1 +1,3 @@
-__version__ = "2.0.dev0"
+__version__ = "3.1.0"
+
+from .client import Client

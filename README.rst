@@ -30,7 +30,7 @@ Make a client:
 
 .. code-block:: python
 
-    from clutch.client import Client
+    from clutch import Client
     client = Client()
 
 If you find the client isn't connecting (an error will be raised), make sure you're entering the address correctly. Reference `urllib.parse.urlparse`_ for parsing rules.
