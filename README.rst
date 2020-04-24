@@ -11,11 +11,15 @@ Clutch
 .. image:: https://img.shields.io/pypi/pyversions/transmission-clutch.svg?style=flat-square
     :target: https://pypi.org/project/transmission-clutch
 
+.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
+    :target: https://github.com/ambv/black
+
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
     :target: https://en.wikipedia.org/wiki/MIT_License
 
-.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
-    :target: https://github.com/ambv/black
+.. image:: https://img.shields.io/pypi/dm/transmission-clutch
+    :target: https://pypistats.org/packages/transmission-clutch
+    :alt: PyPI - Downloads
 
 Quick start
 ===========
