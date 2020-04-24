@@ -1,18 +1,19 @@
-clutch.method.convert package
+clutch.schema.request package
 =============================
 
 Subpackages
 -----------
 
 .. toctree::
+   :maxdepth: 4
 
-   clutch.method.convert.argument
-   clutch.method.convert.response
+   clutch.schema.request.session
+   clutch.schema.request.torrent
 
 Module contents
 ---------------
 
-.. automodule:: clutch.method.convert
+.. automodule:: clutch.schema.request
    :members:
    :undoc-members:
    :show-inheritance:

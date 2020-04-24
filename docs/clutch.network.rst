@@ -5,6 +5,7 @@ Subpackages
 -----------
 
 .. toctree::
+   :maxdepth: 4
 
    clutch.network.rpc
 
@@ -15,14 +16,6 @@ clutch.network.connection module
 --------------------------------
 
 .. automodule:: clutch.network.connection
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-clutch.network.encoding module
-------------------------------
-
-.. automodule:: clutch.network.encoding
    :members:
    :undoc-members:
    :show-inheritance:
