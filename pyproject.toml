@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "transmission-clutch"
-version = "3.0.0.dev5"
+version = "3.0.0"
 description = "An RPC client library for the Transmission BitTorrent client"
 authors = ["mhadam <michael@hadam.us>"]
 repository = "https://github.com/mhadam/clutch"
@@ -13,7 +13,7 @@ packages = [{ include = "clutch" }]
 python = "^3.7"
 requests = "^2.22.0"
 pydantic = "^1.4"
-typing-extensions = {version = "^3.7.4", python = "3.6 || 3.7"}
+typing-extensions = {version = "^3.7.4", python = "3.7"}
 
 [tool.poetry.dev-dependencies]
 pytest = "^4.6"
