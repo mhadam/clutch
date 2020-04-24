@@ -25,6 +25,11 @@ Clutch
     :target: https://pypistats.org/packages/transmission-clutch
     :alt: PyPI downloads badge
 
+Documentation
+====
+
+Found here: `<https://clutch.readthedocs.io>`_
+
 Quick start
 ===========
 
