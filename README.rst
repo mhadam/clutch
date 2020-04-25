@@ -1,5 +1,5 @@
 Clutch
---------
+------
 
 .. image:: https://readthedocs.org/projects/clutch/badge/?version=latest
     :target: https://clutch.readthedocs.io/en/latest/?badge=latest
@@ -26,7 +26,7 @@ Clutch
     :alt: PyPI downloads badge
 
 Documentation
-====
+=============
 
 Found here: `<https://clutch.readthedocs.io>`_
 

@@ -22,7 +22,7 @@ copyright = "2020, Michael Hadam"
 author = "Michael Hadam"
 
 # The full version, including alpha/beta/rc tags
-release = "3.1.0"
+release = "3.1.1"
 
 # -- General configuration ---------------------------------------------------
 
