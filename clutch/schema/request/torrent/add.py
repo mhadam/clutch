@@ -10,7 +10,7 @@ class Cookie(BaseModel):
 
 class TorrentAddArgumentsRequest(BaseModel):
     cookies: Optional[Sequence[Cookie]]
-    download_dir: Optional[str] = Field(None, alias="download_dir")
+    download_dir: Optional[str] = Field(None, alias="download-dir")
     filename: Optional[str] = None
     metainfo: Optional[str] = None
     paused: Optional[bool] = None
