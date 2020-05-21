@@ -11,14 +11,14 @@ class Torrent(BaseModel):
 
 class TorrentAdd(BaseModel):
     torrent_added: Optional[Torrent]
-    torrent_duplicated: Optional[Torrent]
+    torrent_duplicate: Optional[Torrent]
 
     @root_validator
     def check_exclusive_fields(cls, values):
-        added, duplicated = (
+        added, duplicate = (
             values.get("torrent_added"),
-            values.get("torrent_duplicated"),
+            values.get("torrent_duplicate"),
         )
-        if added is not None and duplicated is not None:
-            raise ValueError("Both torrent added and duplicated fields in response")
+        if added is not None and duplicate is not None:
+            raise ValueError("Both torrent added and duplicate fields in response")
         return values
