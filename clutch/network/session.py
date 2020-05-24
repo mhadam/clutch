@@ -23,7 +23,7 @@ class TransmissionAuth(HTTPBasicAuth):
         url = r.url
         self.__csrf_tokens[url] = r.headers[self.HEADER_NAME]
 
-        # # copy the original headers
+        # copy the original headers
         new_headers = dict(
             (k, v)
             for k, v in r.request.headers.items()
@@ -35,11 +35,6 @@ class TransmissionAuth(HTTPBasicAuth):
         new_request = r.request.copy()
         new_request.headers.update(new_headers)
         new_request.headers[self.HEADER_NAME] = self.__csrf_tokens[url]
-        # pass the timeout along only if the timeout was specified
-        # (otherwise probably an old version of Python)
-        timeout = getattr(r.request, "timeout", None)
-        if timeout:
-            new_request.timeout = timeout
 
         r.close()
         _r = r.connection.send(new_request, **kwargs)

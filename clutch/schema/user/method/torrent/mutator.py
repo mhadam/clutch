@@ -13,6 +13,7 @@ class TorrentMutatorArguments(TypedDict, total=False):
     bandwidth_priority: int
     download_limit: int
     download_limited: bool
+    edit_date: int
     files_wanted: Sequence[str]  # empty is shorthand for all
     files_unwanted: Sequence[str]  # empty is shorthand for all
     honors_session_limits: bool
