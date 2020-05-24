@@ -8,7 +8,7 @@ from clutch.schema.request.torrent.accessor import TorrentAccessorArgumentsReque
 from clutch.schema.request.torrent.add import TorrentAddArgumentsRequest
 from clutch.schema.request.torrent.mutator import TorrentMutatorArgumentsRequest
 from clutch.schema.user.method.shared import IdsArg
-from clutch.schema.user.method.torrent.accessor import field_keys, AccessorField
+from clutch.schema.user.method.torrent.accessor import field_keys, TorrentAccessorField
 from clutch.schema.user.method.torrent.action import TorrentActionMethod
 from clutch.schema.user.method.torrent.add import TorrentAddArguments
 from clutch.schema.user.method.torrent.mutator import TorrentMutatorArguments
@@ -20,11 +20,11 @@ from clutch.schema.user.response.torrent.rename import TorrentRename
 class TorrentMethods(MethodNamespace):
     def accessor(
         self,
-        fields: Set[AccessorField] = None,
+        fields: Set[TorrentAccessorField] = None,
         *,
         all_fields: bool = False,
         ids: IdsArg = None,
-        response_format: Literal["objects"] = None,
+        response_format: Literal["objects", "table"] = None,
         tag: int = None
     ) -> Response[TorrentAccessorResponse]:
         """Retrieve information about one or more torrents."""

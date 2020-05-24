@@ -1,6 +1,8 @@
-from typing import Sequence, Optional
+from typing import Sequence, Optional, Union
 
 from pydantic import BaseModel
+
+from clutch.schema.user.method.torrent.accessor import TorrentAccessorField
 
 
 class File(BaseModel):
@@ -153,6 +155,12 @@ class TorrentAccessorObject(BaseModel):
     webseeds_sending_to_us: Optional[int]
 
 
+TorrentAccessorHeader = Sequence[TorrentAccessorField]
+
+
+TorrentAccessorTable = Union[Sequence, TorrentAccessorHeader]
+
+
 class TorrentAccessorResponse(BaseModel):
     removed: Optional[Sequence[int]]
-    torrents: Sequence[TorrentAccessorObject]
+    torrents: Union[Sequence[TorrentAccessorObject], Sequence[TorrentAccessorTable]]

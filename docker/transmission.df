@@ -1,16 +1,15 @@
-FROM debian:buster-slim
+FROM archlinux:latest
+RUN pacman -Syu --noconfirm
 
 ARG APPROOT=/app
 ENV APPROOT $APPROOT
 
 # Install transmission:
-RUN apt-get update && apt-get install -y \
-  transmission-daemon
+RUN pacman -S --noconfirm transmission-cli
 
 WORKDIR $APPROOT
 COPY ./docker/settings.json $APPROOT
 COPY ./docker/integration_resources $APPROOT/integration_resources
-RUN rm /etc/transmission-daemon/settings.json
 # exposes RPC port
 EXPOSE 9091
 # 51413/tcp 51413/udp

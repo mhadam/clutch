@@ -3,7 +3,7 @@ from typing import Set, Sequence
 from clutch.compat import Literal, TypedDict
 from clutch.schema.user.method.shared import IdsArg
 
-AccessorField = Literal[
+TorrentAccessorField = Literal[
     "activity_date",
     "added_date",
     "bandwidth_priority",
@@ -76,7 +76,7 @@ AccessorField = Literal[
     "webseeds_sending_to_us",
 ]
 
-TorrentAccessorFields = Set[AccessorField]
+TorrentAccessorFields = Set[TorrentAccessorField]
 
 
 class TorrentAccessorArgumentsOptional(TypedDict, total=False):

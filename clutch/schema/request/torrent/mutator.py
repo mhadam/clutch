@@ -17,6 +17,7 @@ class TorrentMutatorArgumentsRequest(BaseModel):
     bandwidth_priority: Optional[int] = Field(None, alias="bandwidthPriority")
     download_limit: Optional[int] = Field(None, alias="downloadLimit")
     download_limited: Optional[bool] = Field(None, alias="downloadLimited")
+    edit_date: Optional[int] = Field(None, alias="editDate")
     files_wanted: Optional[Sequence[str]] = Field(None, alias="files-wanted")
     files_unwanted: Optional[Sequence[str]] = Field(None, alias="file-unwanted")
     honors_session_limits: Optional[bool] = Field(None, alias="honors-session-limits")

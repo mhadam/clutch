@@ -24,10 +24,7 @@ class Client:
         query=None,
         username=None,
         password=None,
-        timeout=None,
     ):
-        self._rpc_version = None
-        self._timeout = timeout
         self._endpoint: str = make_endpoint(address, scheme, host, port, path, query)
         self._session: TransmissionSession = TransmissionSession(username, password)
         self._connection: Connection = Connection(self._endpoint, self._session)
