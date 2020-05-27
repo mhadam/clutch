@@ -24,7 +24,11 @@ class Client:
         query=None,
         username=None,
         password=None,
+        debug=False,
     ):
         self._endpoint: str = make_endpoint(address, scheme, host, port, path, query)
         self._session: TransmissionSession = TransmissionSession(username, password)
-        self._connection: Connection = Connection(self._endpoint, self._session)
+        self._connection: Connection = Connection(self._endpoint, self._session, debug)
+
+    def set_rpc_debug(self, value: bool):
+        self._connection.debug = value
