@@ -10,16 +10,23 @@ T = TypeVar("T", bound=BaseModel)
 
 
 class Connection:
-    def __init__(self, endpoint: str, session: TransmissionSession):
+    def __init__(
+        self, endpoint: str, session: TransmissionSession, debug: bool = False
+    ):
         self.endpoint = endpoint
         self.session = session
+        self.debug = debug
 
     def send(self, request: Request, model: Type[T] = None) -> Response[T]:
-        response = self.session.post(
-            self.endpoint,
-            data=request.json(by_alias=True, exclude_none=True).encode("utf-8"),
-        )
+        data = request.json(by_alias=True, exclude_none=True).encode("utf-8")
+        if self.debug:
+            print("RPC request:")
+            print(data)
+        response = self.session.post(self.endpoint, data=data)
         if model is not None:
+            if self.debug:
+                print("RPC response:")
+                print(response.text)
             return Response[model].parse_raw(response.text)  # type: ignore
         else:
             return Response.parse_raw(response.text)
