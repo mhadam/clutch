@@ -20,12 +20,12 @@ class Connection:
     def send(self, request: Request, model: Type[T] = None) -> Response[T]:
         data = request.json(by_alias=True, exclude_none=True).encode("utf-8")
         if self.debug:
-            print("RPC request:")
+            print(f"RPC request sent to {self.endpoint}:")
             print(data)
         response = self.session.post(self.endpoint, data=data)
         if model is not None:
             if self.debug:
-                print("RPC response:")
+                print("RPC response received:")
                 print(response.text)
             return Response[model].parse_raw(response.text)  # type: ignore
         else:
