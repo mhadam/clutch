@@ -32,3 +32,19 @@ class Client:
 
     def set_rpc_debug(self, value: bool):
         self._connection.debug = value
+
+    def set_connection(
+        self,
+        address="http://localhost:9091/transmission/rpc",
+        scheme=None,
+        host=None,
+        port=None,
+        path=None,
+        query=None,
+        username=None,
+        password=None,
+        debug=False,
+    ):
+        self._endpoint = make_endpoint(address, scheme, host, port, path, query)
+        self._session = TransmissionSession(username, password)
+        self._connection = Connection(self._endpoint, self._session, debug)
