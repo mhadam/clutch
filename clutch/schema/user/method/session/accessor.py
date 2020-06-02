@@ -1,4 +1,4 @@
-from typing import Literal
+from clutch.compat import Literal
 
 
 SessionAccessorField = Literal[
