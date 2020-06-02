@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "transmission-clutch"
-version = "4.1.0"
+version = "4.2.0"
 description = "An RPC client library for the Transmission BitTorrent client"
 authors = ["mhadam <michael@hadam.us>"]
 repository = "https://github.com/mhadam/clutch"
