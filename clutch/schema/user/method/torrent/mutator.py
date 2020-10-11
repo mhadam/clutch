@@ -30,7 +30,7 @@ class TorrentMutatorArguments(TypedDict, total=False):
     seed_ratio_limit: float
     seed_ratio_mode: int
     tracker_add: Sequence[str]
-    tracker_remove: Sequence[str]
+    tracker_remove: Sequence[int]
     tracker_replace: Sequence[TrackerReplace]
     upload_limit: int
     upload_limited: bool

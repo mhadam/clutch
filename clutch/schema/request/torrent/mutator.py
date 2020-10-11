@@ -34,7 +34,7 @@ class TorrentMutatorArgumentsRequest(BaseModel):
     seed_ratio_limit: Optional[float] = Field(None, alias="seedRatioLimit")
     seed_ratio_mode: Optional[int] = Field(None, alias="seedRatioMode")
     tracker_add: Optional[Sequence[str]] = Field(None, alias="trackerAdd")
-    tracker_remove: Optional[Sequence[str]] = Field(None, alias="trackerRemove")
+    tracker_remove: Optional[Sequence[int]] = Field(None, alias="trackerRemove")
     tracker_replace: Optional[Sequence[TrackerReplaceRequest]] = Field(
         None, alias="trackerReplace"
     )
