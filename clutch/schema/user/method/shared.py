@@ -1,5 +1,7 @@
-from typing import Union, Sequence
+from typing import Union, Set
 
 from clutch.compat import Literal
 
-IdsArg = Union[int, Sequence[Union[int, str]], Literal["recently_active"]]
+TorrentId = Union[int, str]
+
+IdsArg = Union[int, Set[TorrentId], Literal["recently_active"]]
