@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "transmission-clutch"
-version = "4.2.2"
+version = "5.0.0-alpha.2"
 description = "An RPC client library for the Transmission BitTorrent client"
 authors = ["mhadam <michael@hadam.us>"]
 repository = "https://github.com/mhadam/clutch"
@@ -20,5 +20,5 @@ pytest = "^4.6"
 mypy = "^0.761"
 
 [build-system]
-requires = ["poetry>=0.12"]
+requires = ["poetry>=1.0.0"]
 build-backend = "poetry.masonry.api"
