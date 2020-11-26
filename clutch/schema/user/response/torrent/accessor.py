@@ -83,79 +83,6 @@ class TrackerStat(BaseModel):
 
 
 class TorrentAccessorObject(BaseModel):
-    activity_date: int
-    added_date: int
-    bandwidth_priority: int
-    comment: str
-    corrupt_ever: int
-    creator: str
-    date_created: int
-    desired_available: int
-    done_date: int
-    download_dir: str
-    downloaded_ever: int
-    download_limit: int
-    download_limited: bool
-    edit_date: int
-    error: int
-    error_string: str
-    eta: int
-    eta_idle: int
-    files: Sequence[File]
-    file_stats: Sequence[FileStats]
-    hash_string: str
-    have_unchecked: int
-    have_valid: int
-    honors_session_limits: bool
-    id: int
-    is_finished: bool
-    is_private: bool
-    is_stalled: bool
-    labels: Sequence[str]
-    left_until_done: int
-    magnet_link: str
-    manual_announce_time: int
-    max_connected_peers: int
-    metadata_percent_complete: float
-    name: str
-    peer_limit: int
-    peers: Sequence[Peer]
-    peers_connected: int
-    peers_from: PeersFrom
-    peers_getting_from_us: int
-    peers_sending_to_us: int
-    percent_done: float
-    pieces: str
-    piece_count: int
-    piece_size: int
-    priorities: Sequence[int]
-    queue_position: int
-    rate_download: int
-    rate_upload: int
-    recheck_progress: float
-    seconds_downloading: int
-    seconds_seeding: int
-    seed_idle_limit: int
-    seed_idle_mode: int
-    seed_ratio_limit: float
-    seed_ratio_mode: int
-    size_when_done: int
-    start_date: int
-    status: int
-    trackers: Sequence[Tracker]
-    tracker_stats: Sequence[TrackerStat]
-    total_size: int
-    torrent_file: str
-    uploaded_ever: int
-    upload_limit: int
-    upload_limited: bool
-    upload_ratio: float
-    wanted: Sequence[bool]
-    webseeds: Sequence[str]
-    webseeds_sending_to_us: int
-
-
-class TorrentAccessorObjectIntermediate(BaseModel):
     activity_date: Optional[int]
     added_date: Optional[int]
     bandwidth_priority: Optional[int]
@@ -232,11 +159,6 @@ TorrentAccessorHeader = Sequence[TorrentAccessorField]
 
 
 TorrentAccessorTable = Union[Sequence, TorrentAccessorHeader]
-
-
-class TorrentAccessorIntermediateResponse(BaseModel):
-    removed: Optional[Sequence[int]]
-    torrents: Union[Sequence[TorrentAccessorObjectIntermediate], Sequence[TorrentAccessorTable]]
 
 
 class TorrentAccessorResponse(BaseModel):
