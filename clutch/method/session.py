@@ -7,7 +7,7 @@ from clutch.schema.request.session.mutator import SessionMutatorArgumentsRequest
 from clutch.schema.user.method.session.accessor import SessionAccessorField
 
 from clutch.schema.user.method.session.mutator import SessionMutatorArguments
-from clutch.schema.user.response.session.accessor import SessionAccessor, SessionAccessorIntermediate
+from clutch.schema.user.response.session.accessor import SessionAccessor
 from clutch.schema.user.response.session.stats import SessionStats
 
 
@@ -16,13 +16,12 @@ class SessionMethods(MethodNamespace):
         self, fields: Set[SessionAccessorField] = None, tag: int = None,
     ) -> Response[SessionAccessor]:
         """Retrieve information about one or more torrents."""
-        intermediate_response = self._connection.send(
+        return self._connection.send(
             Request[SessionAccessorArgumentsRequest](
                 method="session-get", arguments={"fields": fields}, tag=tag,
             ),
-            SessionAccessorIntermediate,
+            SessionAccessor,
         )
-        return Response[SessionAccessor].construct(**intermediate_response.dict())
 
     def mutator(self, arguments: SessionMutatorArguments, tag: int = None) -> Response:
         """Set a property of one or more torrents."""
