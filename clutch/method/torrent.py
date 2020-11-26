@@ -12,7 +12,7 @@ from clutch.schema.user.method.torrent.accessor import field_keys, TorrentAccess
 from clutch.schema.user.method.torrent.action import TorrentActionMethod
 from clutch.schema.user.method.torrent.add import TorrentAddArguments
 from clutch.schema.user.method.torrent.mutator import TorrentMutatorArguments
-from clutch.schema.user.response.torrent.accessor import TorrentAccessorResponse
+from clutch.schema.user.response.torrent.accessor import TorrentAccessorResponse, TorrentAccessorIntermediateResponse
 from clutch.schema.user.response.torrent.add import TorrentAdd
 from clutch.schema.user.response.torrent.rename import TorrentRename
 
@@ -39,12 +39,13 @@ class TorrentMethods(MethodNamespace):
         combined_arguments = combine_arguments(
             fields=fields, format=response_format, ids=ids
         )
-        return self._connection.send(
+        intermediate_response: Response[TorrentAccessorIntermediateResponse] = self._connection.send(
             Request[TorrentAccessorArgumentsRequest](
                 method="torrent-get", arguments=combined_arguments, tag=tag
             ),
-            TorrentAccessorResponse,
+            TorrentAccessorIntermediateResponse,
         )
+        return Response[TorrentAccessorResponse].construct(**intermediate_response.dict())
 
     def action(
         self, method: TorrentActionMethod, ids: IdsArg = None, tag: int = None,
