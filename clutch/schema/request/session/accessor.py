@@ -64,14 +64,17 @@ class SessionAccessorArgumentsRequest(BaseModel):
 
     @validator("accessor_fields", pre=True)
     def accessor_fields_format(cls, v):
-        if v is not None and isinstance(v, list):
+        if v is not None:
             camel = ["seed_ratio_limit", "seed_ratio_limited"]
             result = []
-            for field in v:
-                if field in camel:
-                    result.append(to_camel(field))
-                else:
-                    result.append(to_hyphen(field))
+            try:
+                for field in v:
+                    if field in camel:
+                        result.append(to_camel(field))
+                    else:
+                        result.append(to_hyphen(field))
+            except TypeError:
+                return v
             return result
         else:
             return v
