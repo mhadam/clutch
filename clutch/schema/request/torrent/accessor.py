@@ -91,14 +91,17 @@ class TorrentAccessorArgumentsRequest(BaseModel):
 
     @validator("accessor_fields", pre=True)
     def accessor_fields_format(cls, v):
-        if v is not None and isinstance(v, list):
+        if v is not None:
             hyphenated = ["peer_limit"]
             result = []
-            for field in v:
-                if field in hyphenated:
-                    result.append(to_hyphen(field))
-                else:
-                    result.append(to_camel(field))
+            try:
+                for field in v:
+                    if field in hyphenated:
+                        result.append(to_hyphen(field))
+                    else:
+                        result.append(to_camel(field))
+            except TypeError:
+                return v
             return result
         else:
             return v
