@@ -18,3 +18,6 @@ integration-shell:
 clean-containers:
 	docker stop $(docker ps -a -q)
 	docker rm $(docker ps -a -q)
+
+docs:
+	sphinx-autogen docs/index.rst -o docs/
