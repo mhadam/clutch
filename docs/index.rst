@@ -32,6 +32,7 @@ Version |release|.
     :caption: Contents:
 
     intro
+    examples
     server_config
     commands
     modules
