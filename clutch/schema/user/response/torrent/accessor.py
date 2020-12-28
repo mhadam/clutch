@@ -1,8 +1,20 @@
+from enum import unique, Enum
 from typing import Sequence, Optional, Union
 
 from pydantic import BaseModel
 
 from clutch.schema.user.method.torrent.accessor import TorrentAccessorField
+
+
+@unique
+class Status(Enum):
+    STOPPED = 0
+    CHECK_WAIT = 1
+    CHECK = 2
+    DOWNLOAD_WAIT = 3
+    DOWNLOAD = 4
+    SEED_WAIT = 5
+    SEED = 6
 
 
 class File(BaseModel):
@@ -141,7 +153,7 @@ class TorrentAccessorObject(BaseModel):
     seed_ratio_mode: Optional[int]
     size_when_done: Optional[int]
     start_date: Optional[int]
-    status: Optional[int]
+    status: Optional[Status]
     trackers: Optional[Sequence[Tracker]]
     tracker_stats: Optional[Sequence[TrackerStat]]
     total_size: Optional[int]
