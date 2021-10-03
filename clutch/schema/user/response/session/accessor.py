@@ -82,4 +82,3 @@ class SessionAccessor(BaseModel):
     units: Optional[Units]
     utp_enabled: Optional[bool]
     version: Optional[str]
-

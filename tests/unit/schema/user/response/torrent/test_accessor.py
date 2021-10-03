@@ -2,9 +2,7 @@ from clutch.schema.user.response.torrent.accessor import TorrentAccessorObject
 
 
 def test_optional_fields():
-    data = {
-        "error": "some string"
-    }
+    data = {"error": "some string"}
 
     result = TorrentAccessorObject.construct(**data)
 
