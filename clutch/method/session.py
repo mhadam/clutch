@@ -13,12 +13,16 @@ from clutch.schema.user.response.session.stats import SessionStats
 
 class SessionMethods(MethodNamespace):
     def accessor(
-        self, fields: Set[SessionAccessorField] = None, tag: int = None,
+        self,
+        fields: Set[SessionAccessorField] = None,
+        tag: int = None,
     ) -> Response[SessionAccessor]:
         """Retrieve information about one or more torrents."""
         return self._connection.send(
             Request[SessionAccessorArgumentsRequest](
-                method="session-get", arguments={"fields": fields}, tag=tag,
+                method="session-get",
+                arguments={"fields": fields},
+                tag=tag,
             ),
             SessionAccessor,
         )

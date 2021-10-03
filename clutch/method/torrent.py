@@ -47,7 +47,10 @@ class TorrentMethods(MethodNamespace):
         )
 
     def action(
-        self, method: TorrentActionMethod, ids: IdsArg = None, tag: int = None,
+        self,
+        method: TorrentActionMethod,
+        ids: IdsArg = None,
+        tag: int = None,
     ) -> Response:
         """Start, stop, verify or reannounce a torrent."""
         return self._connection.send(
