@@ -18,16 +18,16 @@ class TorrentMutatorArgumentsRequest(BaseModel):
     download_limit: Optional[int] = Field(None, alias="downloadLimit")
     download_limited: Optional[bool] = Field(None, alias="downloadLimited")
     edit_date: Optional[int] = Field(None, alias="editDate")
-    files_wanted: Optional[Sequence[str]] = Field(None, alias="files-wanted")
-    files_unwanted: Optional[Sequence[str]] = Field(None, alias="file-unwanted")
+    files_wanted: Optional[Sequence[int]] = Field(None, alias="files-wanted")
+    files_unwanted: Optional[Sequence[int]] = Field(None, alias="file-unwanted")
     honors_session_limits: Optional[bool] = Field(None, alias="honorsSessionLimits")
     ids: Optional[IdsArg]
     labels: Optional[Sequence[str]]
     location: Optional[str]
     peer_limit: Optional[int] = Field(None, alias="peer-limit")
-    priority_high: Optional[Sequence[str]] = Field(None, alias="priority-high")
-    priority_low: Optional[Sequence[str]] = Field(None, alias="priority-low")
-    priority_normal: Optional[Sequence[str]] = Field(None, alias="priority-normal")
+    priority_high: Optional[Sequence[int]] = Field(None, alias="priority-high")
+    priority_low: Optional[Sequence[int]] = Field(None, alias="priority-low")
+    priority_normal: Optional[Sequence[int]] = Field(None, alias="priority-normal")
     queue_position: Optional[int] = Field(None, alias="queuePosition")
     seed_idle_limit: Optional[int] = Field(None, alias="seedIdleLimit")
     seed_idle_mode: Optional[int] = Field(None, alias="seedIdleMode")
