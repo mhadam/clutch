@@ -14,16 +14,16 @@ class TorrentMutatorArguments(TypedDict, total=False):
     download_limit: int
     download_limited: bool
     edit_date: int
-    files_wanted: Sequence[str]  # empty is shorthand for all
-    files_unwanted: Sequence[str]  # empty is shorthand for all
+    files_wanted: Sequence[int]  # empty is shorthand for all
+    files_unwanted: Sequence[int]  # empty is shorthand for all
     honors_session_limits: bool
     ids: IdsArg
     labels: Sequence[str]
     location: str
     peer_limit: int
-    priority_high: Sequence[str]  # empty is shorthand for all
-    priority_low: Sequence[str]  # empty is shorthand for all
-    priority_normal: Sequence[str]  # empty is shorthand for all
+    priority_high: Sequence[int]  # empty is shorthand for all
+    priority_low: Sequence[int]  # empty is shorthand for all
+    priority_normal: Sequence[int]  # empty is shorthand for all
     queue_position: int
     seed_idle_limit: int
     seed_idle_mode: int
