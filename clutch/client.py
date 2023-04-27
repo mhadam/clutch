@@ -8,7 +8,6 @@ from clutch.network.utility import make_endpoint
 
 
 class Client:
-
     session: SessionMethods = SessionMethods()
     torrent: TorrentMethods = TorrentMethods()
     queue: QueueMethods = QueueMethods()
