@@ -3,11 +3,11 @@ from urllib.parse import urlsplit, urlunsplit
 
 def make_endpoint(
     address: str = "http://localhost:9091/transmission/rpc",
-    scheme: str = None,
-    host: str = None,
-    port: int = None,
-    path: str = None,
-    query: str = None,
+    scheme: str | None = None,
+    host: str | None = None,
+    port: int | None = None,
+    path: str | None = None,
+    query: str | None = None,
 ) -> str:
     # any explicit keyword arguments override the default address
     url_info = urlsplit(address)

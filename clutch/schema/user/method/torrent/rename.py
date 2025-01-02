@@ -1,6 +1,4 @@
-from typing import Union, Sequence
-
-from clutch.compat import TypedDict
+from typing import Sequence, TypedDict, Union
 
 
 class TorrentRenameArguments(TypedDict):

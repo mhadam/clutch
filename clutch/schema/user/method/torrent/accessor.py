@@ -1,11 +1,11 @@
-from typing import Set, Sequence
+from typing import Literal, Set, TypedDict
 
-from clutch.compat import Literal, TypedDict
 from clutch.schema.user.method.shared import IdsArg
 
 TorrentAccessorField = Literal[
     "activity_date",
     "added_date",
+    "availability",
     "bandwidth_priority",
     "comment",
     "corrupt_ever",
@@ -22,8 +22,10 @@ TorrentAccessorField = Literal[
     "error_string",
     "eta",
     "eta_idle",
+    "file_count",
     "files",
     "file_stats",
+    "group",
     "hash_string",
     "have_unchecked",
     "have_valid",
@@ -45,11 +47,13 @@ TorrentAccessorField = Literal[
     "peers_from",
     "peers_getting_from_us",
     "peers_sending_to_us",
+    "percent_complete",
     "percent_done",
     "pieces",
     "piece_count",
     "piece_size",
     "priorities",
+    "primary_mime_type",
     "queue_position",
     "rate_download",
     "rate_upload",
@@ -60,10 +64,12 @@ TorrentAccessorField = Literal[
     "seed_idle_mode",
     "seed_ratio_limit",
     "seed_ratio_mode",
+    "sequential_download",
     "size_when_done",
     "start_date",
     "status",
     "trackers",
+    "tracker_list",
     "tracker_stats",
     "total_size",
     "torrent_file",
@@ -88,9 +94,10 @@ class TorrentAccessorArguments(TorrentAccessorArgumentsOptional):
     fields: TorrentAccessorFields
 
 
-field_keys: Sequence[str] = [
+field_keys: set[TorrentAccessorField] = {
     "activity_date",
     "added_date",
+    "availability",
     "bandwidth_priority",
     "comment",
     "corrupt_ever",
@@ -107,8 +114,10 @@ field_keys: Sequence[str] = [
     "error_string",
     "eta",
     "eta_idle",
+    "file_count",
     "files",
     "file_stats",
+    "group",
     "hash_string",
     "have_unchecked",
     "have_valid",
@@ -130,11 +139,13 @@ field_keys: Sequence[str] = [
     "peers_from",
     "peers_getting_from_us",
     "peers_sending_to_us",
+    "percent_complete",
     "percent_done",
     "pieces",
     "piece_count",
     "piece_size",
     "priorities",
+    "primary_mime_type",
     "queue_position",
     "rate_download",
     "rate_upload",
@@ -145,10 +156,12 @@ field_keys: Sequence[str] = [
     "seed_idle_mode",
     "seed_ratio_limit",
     "seed_ratio_mode",
+    "sequential_download",
     "size_when_done",
     "start_date",
     "status",
     "trackers",
+    "tracker_list",
     "tracker_stats",
     "total_size",
     "torrent_file",
@@ -159,4 +172,4 @@ field_keys: Sequence[str] = [
     "wanted",
     "webseeds",
     "webseeds_sending_to_us",
-]
+}

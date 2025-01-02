@@ -1,4 +1,4 @@
-from clutch.compat import TypedDict
+from typing import TypedDict
 
 from clutch.schema.user.method.shared import IdsArg
 

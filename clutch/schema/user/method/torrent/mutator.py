@@ -1,21 +1,17 @@
-from typing import Sequence
+from typing import NewType, Sequence, TypedDict
 
-from clutch.compat import TypedDict
 from clutch.schema.user.method.shared import IdsArg
 
-
-class TrackerReplace(TypedDict):
-    tracker_id: int
-    announce_url: str
+Url = NewType("Url", str)
 
 
 class TorrentMutatorArguments(TypedDict, total=False):
     bandwidth_priority: int
     download_limit: int
     download_limited: bool
-    edit_date: int
     files_wanted: Sequence[int]  # empty is shorthand for all
     files_unwanted: Sequence[int]  # empty is shorthand for all
+    group: str
     honors_session_limits: bool
     ids: IdsArg
     labels: Sequence[str]
@@ -29,8 +25,7 @@ class TorrentMutatorArguments(TypedDict, total=False):
     seed_idle_mode: int
     seed_ratio_limit: float
     seed_ratio_mode: int
-    tracker_add: Sequence[str]
-    tracker_remove: Sequence[int]
-    tracker_replace: Sequence[TrackerReplace]
+    sequential_download: bool
+    tracker_list: Sequence[Sequence[Url]]
     upload_limit: int
     upload_limited: bool

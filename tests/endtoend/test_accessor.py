@@ -26,10 +26,12 @@ def test_retrieve_all_fields():
     assert response.result == "success"
     assert response.tag == tag
     assert "little_women" in {
-        x["name"] for x in response.dict(exclude_none=True)["arguments"]["torrents"]
+        x["name"]
+        for x in response.model_dump(exclude_none=True)["arguments"]["torrents"]
     }
     assert "ion" in {
-        x["name"] for x in response.dict(exclude_none=True)["arguments"]["torrents"]
+        x["name"]
+        for x in response.model_dump(exclude_none=True)["arguments"]["torrents"]
     }
 
 
@@ -41,5 +43,5 @@ def test_retrieve_two_fields():
 
     assert response.result == "success"
     assert response.tag == tag
-    assert "id" in response.dict(exclude_none=True)["arguments"]["torrents"][0]
-    assert "name" in response.dict(exclude_none=True)["arguments"]["torrents"][0]
+    assert "id" in response.model_dump(exclude_none=True)["arguments"]["torrents"][0]
+    assert "name" in response.model_dump(exclude_none=True)["arguments"]["torrents"][0]

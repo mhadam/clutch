@@ -1,54 +1,61 @@
-from typing import Set, Optional
+from typing import Literal
 
-from pydantic import BaseModel, Field, validator
+from pydantic import BaseModel, Field, field_validator
 
-from clutch.compat import Literal
 from clutch.network.rpc.convert import to_camel, to_hyphen
 
 SessionAccessorRequestField = Literal[
     "alt-speed-down",
     "alt-speed-enabled",
     "alt-speed-time-begin",
+    "alt-speed-time-day",
     "alt-speed-time-enabled",
     "alt-speed-time-end",
-    "alt-speed-time-day",
     "alt-speed-up",
-    "blocklist-url",
     "blocklist-enabled",
     "blocklist-size",
+    "blocklist-url",
     "cache-size-mb",
     "config-dir",
-    "download-dir",
-    "download-queue-size",
-    "download-queue-enabled",
+    "default-trackers",
     "dht-enabled",
+    "download-dir",
+    "download-queue-enabled",
+    "download-queue-size",
     "encryption",
-    "idle-seeding-limit",
     "idle-seeding-limit-enabled",
-    "incomplete-dir",
+    "idle-seeding-limit",
     "incomplete-dir-enabled",
+    "incomplete-dir",
     "lpd-enabled",
     "peer-limit-global",
     "peer-limit-per-torrent",
-    "pex-enabled",
-    "peer-port",
     "peer-port-random-on-start",
+    "peer-port",
+    "pex-enabled",
     "port-forwarding-enabled",
     "queue-stalled-enabled",
     "queue-stalled-minutes",
     "rename-partial-files",
-    "rpc-version",
+    "reqq",
     "rpc-version-minimum",
-    "script-torrent-done-filename",
+    "rpc-version-semver",
+    "rpc-version",
+    "script-torrent-added-enabled",
+    "script-torrent-added-filename",
     "script-torrent-done-enabled",
+    "script-torrent-done-filename",
+    "script-torrent-done-seeding-enabled",
+    "script-torrent-done-seeding-filename",
+    "seed-queue-enabled",
+    "seed-queue-size",
     "seedRatioLimit",
     "seedRatioLimited",
-    "seed-queue-size",
-    "seed-queue-enabled",
-    "speed-limit-down",
+    "session-id",
     "speed-limit-down-enabled",
-    "speed-limit-up",
+    "speed-limit-down",
     "speed-limit-up-enabled",
+    "speed-limit-up",
     "start-added-torrents",
     "trash-original-torrent-files",
     "units",
@@ -58,23 +65,23 @@ SessionAccessorRequestField = Literal[
 
 
 class SessionAccessorArgumentsRequest(BaseModel):
-    accessor_fields: Optional[Set[SessionAccessorRequestField]] = Field(
-        None, alias="fields"
+    accessor_fields: set[SessionAccessorRequestField] | None = Field(
+        None, serialization_alias="fields"
     )
 
-    @validator("accessor_fields", pre=True)
+    @field_validator("accessor_fields", mode="before")
+    @classmethod
     def accessor_fields_format(cls, v):
-        if v is not None:
-            camel = ["seed_ratio_limit", "seed_ratio_limited"]
-            result = []
-            try:
-                for field in v:
-                    if field in camel:
-                        result.append(to_camel(field))
-                    else:
-                        result.append(to_hyphen(field))
-            except TypeError:
-                return v
-            return result
-        else:
+        if v is None:
             return v
+        camel = ["seed_ratio_limit", "seed_ratio_limited"]
+        result = set()
+        try:
+            for field in v:
+                if field in camel:
+                    result.add(to_camel(field))
+                else:
+                    result.add(to_hyphen(field))
+        except TypeError:
+            return v
+        return result

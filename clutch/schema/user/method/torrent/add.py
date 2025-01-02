@@ -1,6 +1,4 @@
-from typing import Sequence, Union
-
-from clutch.compat import TypedDict
+from typing import Sequence, TypedDict, Union
 
 
 class Cookie(TypedDict):

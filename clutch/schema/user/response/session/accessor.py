@@ -1,8 +1,6 @@
-from typing import Tuple, Union, Optional
+from typing import Annotated, Any, Literal, Tuple, Union
 
-from pydantic import BaseModel
-
-from clutch.compat import Literal
+from pydantic import AfterValidator, BaseModel
 
 BinaryDataRateUnits = Tuple[
     Literal["KiB/s"], Literal["MiB/s"], Literal["GiB/s"], Literal["TiB/s"]
@@ -32,53 +30,66 @@ class Units(BaseModel):
     memory_bytes: ByteDefinition
 
 
+def validate_tiers(v: Any) -> list[list[str]]:
+    if not isinstance(v, str):
+        raise ValueError(f"value {v} is not a string")
+    return [x.split() for x in v.split("\n\n")]
+
+
 class SessionAccessor(BaseModel):
-    alt_speed_down: Optional[int]
-    alt_speed_enabled: Optional[bool]
-    alt_speed_time_begin: Optional[int]
-    alt_speed_time_enabled: Optional[bool]
-    alt_speed_time_end: Optional[int]
-    alt_speed_time_day: Optional[int]
-    alt_speed_up: Optional[int]
-    blocklist_url: Optional[str]
-    blocklist_size: Optional[int]
-    blocklist_enabled: Optional[bool]
-    cache_size_mb: Optional[int]
-    config_dir: Optional[str]
-    download_dir: Optional[str]
-    download_queue_size: Optional[int]
-    download_queue_enabled: Optional[bool]
-    dht_enabled: Optional[bool]
-    encryption: Optional[str]
-    idle_seeding_limit: Optional[int]
-    idle_seeding_limit_enabled: Optional[bool]
-    incomplete_dir: Optional[str]
-    incomplete_dir_enabled: Optional[bool]
-    lpd_enabled: Optional[bool]
-    peer_limit_global: Optional[int]
-    peer_limit_per_torrent: Optional[int]
-    pex_enabled: Optional[bool]
-    peer_port: Optional[int]
-    peer_port_random_on_start: Optional[bool]
-    port_forwarding_enabled: Optional[bool]
-    queue_stalled_enabled: Optional[bool]
-    queue_stalled_minutes: Optional[int]
-    rename_partial_files: Optional[bool]
-    rpc_version: Optional[int]
-    rpc_version_minimum: Optional[int]
-    script_torrent_done_filename: Optional[str]
-    script_torrent_done_enabled: Optional[bool]
-    seed_ratio_limit: Optional[float]
-    seed_ratio_limited: Optional[bool]
-    seed_queue_size: Optional[int]
-    seed_queue_enabled: Optional[bool]
-    session_id: Optional[str]
-    speed_limit_down: Optional[int]
-    speed_limit_down_enabled: Optional[bool]
-    speed_limit_up: Optional[int]
-    speed_limit_up_enabled: Optional[bool]
-    start_added_torrents: Optional[bool]
-    trash_original_torrent_files: Optional[bool]
-    units: Optional[Units]
-    utp_enabled: Optional[bool]
-    version: Optional[str]
+    alt_speed_down: int | None
+    alt_speed_enabled: bool | None
+    alt_speed_time_begin: int | None
+    alt_speed_time_enabled: bool | None
+    alt_speed_time_end: int | None
+    alt_speed_time_day: int | None
+    alt_speed_up: int | None
+    blocklist_url: str | None
+    blocklist_size: int | None
+    blocklist_enabled: bool | None
+    cache_size_mb: int | None
+    config_dir: str | None
+    default_trackers: Annotated[list[list[str]] | None, AfterValidator(validate_tiers)]
+    download_dir: str | None
+    download_queue_size: int | None
+    download_queue_enabled: bool | None
+    dht_enabled: bool | None
+    encryption: str | None
+    idle_seeding_limit: int | None
+    idle_seeding_limit_enabled: bool | None
+    incomplete_dir: str | None
+    incomplete_dir_enabled: bool | None
+    lpd_enabled: bool | None
+    peer_limit_global: int | None
+    peer_limit_per_torrent: int | None
+    pex_enabled: bool | None
+    peer_port: int | None
+    peer_port_random_on_start: bool | None
+    port_forwarding_enabled: bool | None
+    queue_stalled_enabled: bool | None
+    queue_stalled_minutes: int | None
+    rename_partial_files: bool | None
+    reqq: int | None
+    rpc_version: int | None
+    rpc_version_minimum: int | None
+    rpc_version_semver: str | None
+    script_torrent_added_enabled: bool | None
+    script_torrent_added_filename: str | None
+    script_torrent_done_seeding_enabled: bool | None
+    script_torrent_done_seeding_filename: str | None
+    script_torrent_done_filename: str | None
+    script_torrent_done_enabled: bool | None
+    seed_ratio_limit: float | None
+    seed_ratio_limited: bool | None
+    seed_queue_size: int | None
+    seed_queue_enabled: bool | None
+    session_id: str | None
+    speed_limit_down: int | None
+    speed_limit_down_enabled: bool | None
+    speed_limit_up: int | None
+    speed_limit_up_enabled: bool | None
+    start_added_torrents: bool | None
+    trash_original_torrent_files: bool | None
+    units: Units | None
+    utp_enabled: bool | None
+    version: str | None

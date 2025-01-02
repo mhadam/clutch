@@ -1,29 +1,81 @@
-[tool.poetry]
+[project]
 name = "transmission-clutch"
-version = "6.0.4"
+version = "6.0.5"
 description = "An RPC client library for the Transmission BitTorrent client"
-authors = ["mhadam <michael@hadam.us>"]
+authors = [
+    { name = "Michael Hadam" , email = "michael@hadam.us"}
+]
 repository = "https://github.com/mhadam/clutch"
 documentation = "https://clutch.readthedocs.io/en/latest/"
 readme = "README.rst"
 license = "MIT"
 packages = [{ include = "clutch" }]
+requires-python = "~=3.10"
 
-[tool.poetry.dependencies]
-python = "^3.8"
-requests = "^2.22.0"
-pydantic = "^1.4"
-typing-extensions = {version = "^3.7.4", python = "3.7"}
+dependencies = [
+    "requests~=2.32",
+    "pydantic~=2.10"
+]
 
-[tool.poetry.dev-dependencies]
-pytest = "^4.6"
-mypy = "^0.761"
-sphinx-autodoc-typehints = "^1.12.0"
-
-[tool.poetry.group.dev.dependencies]
-sphinx = "^6.2.1"
-black = "^23.3.0"
+[dependency-groups]
+test = [
+    "pytest-httpserver>=1.1.0",
+    "pytest~=8.3",
+    "deepdiff>=8.1.1",
+    "dirty-equals>=0.9.0",
+]
+dev = [
+    "sphinx",
+    "ruff",
+    "mypy",
+    "sphinx-autodoc-typehints",
+    "hatchling>=1.27.0",
+    "tomlscript",
+    "sphinx-autobuild",
+    "types-requests>=2.32.0.20241016",
+]
 
 [build-system]
-requires = ["poetry>=1.0.0"]
-build-backend = "poetry.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["clutch"]
+
+[tool.pytest.ini_options]
+log_cli = true
+log_cli_level = "INFO"
+log_cli_format = "%(asctime)s [%(levelname)8s] %(message)s (%(filename)s:%(lineno)s)"
+log_cli_date_format = "%Y-%m-%d %H:%M:%S"
+
+[tool.ruff]
+target-version = "py310"
+lint.extend-select = ["RUF013", "F401"]
+extend-include = ["clutch/", "tests/"]
+
+[tool.mypy]
+plugins = ["pydantic.mypy"]
+
+[tool.tomlscript]
+mypy = "uv run mypy clutch/ tests/"
+ruff = "ruff format"
+unit = """
+docker build -f docker/clutch.df -t clutch-test .
+docker run --rm --entrypoint "/bin/sh" clutch-test -c "mypy .; pytest tests/unit"
+"""
+docs = "uv run sphinx-autogen docs/index.rst -o docs/"
+docs-live = "uv run sphinx-autobuild docs docs/_build/html"
+clean-containers = """
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
+"""
+integration-shell = """
+docker-compose -f ./docker/docker-compose.yml up -d --force-recreate --no-deps --build testbed transmission
+docker-compose -f ./docker/docker-compose.yml run --rm start_dependencies
+docker-compose -f ./docker/docker-compose.yml run --rm testbed sh -c "python -i client_setup.py"
+"""
+end-to-end = """
+docker-compose -f ./docker/docker-compose.yml up -d --force-recreate --no-deps --build testbed transmission
+docker-compose -f ./docker/docker-compose.yml run --rm start_dependencies
+docker-compose -f ./docker/docker-compose.yml run --rm testbed sh -c "pytest tests/endtoend"
+"""
