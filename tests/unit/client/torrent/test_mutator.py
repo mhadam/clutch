@@ -23,8 +23,14 @@ def test_torrent_mutator_arguments(client):
 
     request_data = loads(client._connection.session.post.call_args.kwargs["data"])
     assert request_data["method"] == "torrent-set"
+    # turn ids into a set since pydantic seems to serialize as a set
+    # and original ids order differs from assertion
+    assert len(set(request_data["arguments"]["ids"])) == len(
+        request_data["arguments"]["ids"]
+    )
+    request_data["arguments"]["ids"] = set(request_data["arguments"]["ids"])
     assert request_data["arguments"] == {
-        "ids": ["hi", 2],
+        "ids": {"hi", 2},
         "downloadLimited": True,
         "priority-high": [],
     }

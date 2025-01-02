@@ -1,7 +1,7 @@
-from typing import Union, Set
-
-from clutch.compat import Literal
+from typing import Literal, Union, Iterable
 
 TorrentId = Union[int, str]
 
-IdsArg = Union[int, Set[TorrentId], Set[int], Set[str], Literal["recently_active"]]
+IdsArg = Union[
+    int, Iterable[TorrentId], Iterable[int], Iterable[str], Literal["recently_active"]
+]

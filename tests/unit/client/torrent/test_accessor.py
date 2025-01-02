@@ -4,7 +4,7 @@ from json import loads
 def test_torrent_accessor_fields(client):
     try:
         client.torrent.accessor(fields=["peer_limit", "tracker_stats"])
-    except Exception:
+    except:
         pass
 
     request_data = loads(client._connection.session.post.call_args.kwargs["data"])

@@ -1,14 +1,14 @@
-from typing import Optional, Set
+from typing import Literal, Set
 
-from pydantic import BaseModel, Field, validator
+from pydantic import BaseModel, Field, field_validator
 
-from clutch.compat import Literal
-from clutch.network.rpc.convert import to_hyphen, to_camel
+from clutch.network.rpc.convert import to_camel, to_hyphen
 from clutch.schema.user.method.shared import IdsArg
 
 AccessorFieldRequest = Literal[
     "activityDate",
     "addedDate",
+    "availability",
     "bandwidthPriority",
     "comment",
     "corruptEver",
@@ -25,8 +25,10 @@ AccessorFieldRequest = Literal[
     "errorString",
     "eta",
     "etaIdle",
+    "file-count",
     "files",
     "fileStats",
+    "group",
     "hashString",
     "haveUnchecked",
     "haveValid",
@@ -48,11 +50,13 @@ AccessorFieldRequest = Literal[
     "peersFrom",
     "peersGettingFromUs",
     "peersSendingToUs",
+    "percentComplete",
     "percentDone",
     "pieces",
     "pieceCount",
     "pieceSize",
     "priorities",
+    "primary-mime-type",
     "queuePosition",
     "rateDownload",
     "rateUpload",
@@ -63,10 +67,12 @@ AccessorFieldRequest = Literal[
     "seedIdleMode",
     "seedRatioLimit",
     "seedRatioMode",
+    "sequentialDownload",
     "sizeWhenDone",
     "startDate",
     "status",
     "trackers",
+    "trackerList",
     "trackerStats",
     "totalSize",
     "torrentFile",
@@ -83,23 +89,24 @@ TorrentAccessorFieldsRequest = Set[AccessorFieldRequest]
 
 
 class TorrentAccessorArgumentsRequest(BaseModel):
-    ids: Optional[IdsArg]
-    format: Optional[Literal["objects", "table"]]
-    accessor_fields: TorrentAccessorFieldsRequest = Field(
-        ..., alias="fields"
-    )  # this must be an alias for pydantic reasons
+    ids: IdsArg | None = None
+    format: Literal["objects", "table"] | None = None
+    accessor_fields: TorrentAccessorFieldsRequest | None = Field(
+        ..., serialization_alias="fields"
+    )
 
-    @validator("accessor_fields", pre=True)
+    @field_validator("accessor_fields", mode="before")
+    @classmethod
     def accessor_fields_format(cls, v):
         if v is not None:
-            hyphenated = ["peer_limit"]
-            result = []
+            hyphenated = {"peer_limit"}
+            result = set()
             try:
                 for field in v:
                     if field in hyphenated:
-                        result.append(to_hyphen(field))
+                        result.add(to_hyphen(field))
                     else:
-                        result.append(to_camel(field))
+                        result.add(to_camel(field))
             except TypeError:
                 return v
             return result

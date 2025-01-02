@@ -1,11 +1,10 @@
 from typing import Set
 
 from clutch.method.method import MethodNamespace
-from clutch.network.rpc.message import Response, Request
+from clutch.network.rpc.message import Request, Response
 from clutch.schema.request.session.accessor import SessionAccessorArgumentsRequest
 from clutch.schema.request.session.mutator import SessionMutatorArgumentsRequest
 from clutch.schema.user.method.session.accessor import SessionAccessorField
-
 from clutch.schema.user.method.session.mutator import SessionMutatorArguments
 from clutch.schema.user.response.session.accessor import SessionAccessor
 from clutch.schema.user.response.session.stats import SessionStats
@@ -14,20 +13,22 @@ from clutch.schema.user.response.session.stats import SessionStats
 class SessionMethods(MethodNamespace):
     def accessor(
         self,
-        fields: Set[SessionAccessorField] = None,
-        tag: int = None,
+        fields: Set[SessionAccessorField] | None = None,
+        tag: int | None = None,
     ) -> Response[SessionAccessor]:
         """Retrieve information about one or more torrents."""
         return self._connection.send(
             Request[SessionAccessorArgumentsRequest](
                 method="session-get",
-                arguments={"fields": fields},
+                arguments={"accessor_fields": fields},
                 tag=tag,
             ),
             SessionAccessor,
         )
 
-    def mutator(self, arguments: SessionMutatorArguments, tag: int = None) -> Response:
+    def mutator(
+        self, arguments: SessionMutatorArguments, tag: int | None = None
+    ) -> Response:
         """Set a property of one or more torrents."""
         return self._connection.send(
             Request[SessionMutatorArgumentsRequest](
@@ -35,12 +36,12 @@ class SessionMethods(MethodNamespace):
             )
         )
 
-    def stats(self, tag: int = None) -> Response[SessionStats]:
+    def stats(self, tag: int | None = None) -> Response[SessionStats]:
         """Retrieve all session statistics."""
         return self._connection.send(
             Request(method="session-stats", tag=tag), SessionStats
         )
 
-    def shutdown(self, tag: int = None) -> Response:
+    def shutdown(self, tag: int | None = None) -> Response:
         """Shutdown the torrent client."""
         return self._connection.send(Request(method="session-close", tag=tag))

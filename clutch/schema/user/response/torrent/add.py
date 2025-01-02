@@ -1,6 +1,6 @@
-from typing import Optional
+from typing import Self
 
-from pydantic import BaseModel, root_validator
+from pydantic import BaseModel, model_validator
 
 
 class Torrent(BaseModel):
@@ -10,15 +10,11 @@ class Torrent(BaseModel):
 
 
 class TorrentAdd(BaseModel):
-    torrent_added: Optional[Torrent]
-    torrent_duplicate: Optional[Torrent]
+    torrent_added: Torrent | None = None
+    torrent_duplicate: Torrent | None = None
 
-    @root_validator
-    def check_exclusive_fields(cls, values):
-        added, duplicate = (
-            values.get("torrent_added"),
-            values.get("torrent_duplicate"),
-        )
-        if added is not None and duplicate is not None:
+    @model_validator(mode="after")
+    def check_exclusive_fields(self) -> Self:
+        if self.torrent_added is not None and self.torrent_duplicate is not None:
             raise ValueError("Both torrent added and duplicate fields in response")
-        return values
+        return self

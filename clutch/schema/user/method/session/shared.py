@@ -1,6 +1,4 @@
-from typing import Tuple
-
-from clutch.compat import Literal, TypedDict
+from typing import Literal, Tuple, TypedDict
 
 # Todo: change these values, match to response schema
 DataRateUnits = Tuple[

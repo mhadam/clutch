@@ -37,7 +37,7 @@ Version |release|.
     commands
     modules
 
-Clutch is an open-source Python library for communicating over RPC_ with the `Transmission BitTorrent client`_.
+Clutch is an open-source Python library for talking to the `Transmission BitTorrent client`_ over RPC_.
 
 It's handy for doing things like:
 

@@ -1,45 +1,41 @@
-from typing import Sequence, Optional
+from typing import Sequence
 
 from pydantic import BaseModel, Field
 
 from clutch.schema.user.method.shared import IdsArg
 
 
-class TrackerReplaceRequest(BaseModel):
-    tracker_id: int = Field(None, alias="trackerId")
-    announce_url: str = Field(None, alias="announceUrl")
-
-    class Config:
-        allow_population_by_field_name = True
-
-
 class TorrentMutatorArgumentsRequest(BaseModel):
-    bandwidth_priority: Optional[int] = Field(None, alias="bandwidthPriority")
-    download_limit: Optional[int] = Field(None, alias="downloadLimit")
-    download_limited: Optional[bool] = Field(None, alias="downloadLimited")
-    edit_date: Optional[int] = Field(None, alias="editDate")
-    files_wanted: Optional[Sequence[int]] = Field(None, alias="files-wanted")
-    files_unwanted: Optional[Sequence[int]] = Field(None, alias="files-unwanted")
-    honors_session_limits: Optional[bool] = Field(None, alias="honorsSessionLimits")
-    ids: Optional[IdsArg]
-    labels: Optional[Sequence[str]]
-    location: Optional[str]
-    peer_limit: Optional[int] = Field(None, alias="peer-limit")
-    priority_high: Optional[Sequence[int]] = Field(None, alias="priority-high")
-    priority_low: Optional[Sequence[int]] = Field(None, alias="priority-low")
-    priority_normal: Optional[Sequence[int]] = Field(None, alias="priority-normal")
-    queue_position: Optional[int] = Field(None, alias="queuePosition")
-    seed_idle_limit: Optional[int] = Field(None, alias="seedIdleLimit")
-    seed_idle_mode: Optional[int] = Field(None, alias="seedIdleMode")
-    seed_ratio_limit: Optional[float] = Field(None, alias="seedRatioLimit")
-    seed_ratio_mode: Optional[int] = Field(None, alias="seedRatioMode")
-    tracker_add: Optional[Sequence[str]] = Field(None, alias="trackerAdd")
-    tracker_remove: Optional[Sequence[int]] = Field(None, alias="trackerRemove")
-    tracker_replace: Optional[Sequence[TrackerReplaceRequest]] = Field(
-        None, alias="trackerReplace"
+    bandwidth_priority: int | None = Field(
+        None, serialization_alias="bandwidthPriority"
     )
-    upload_limit: Optional[int] = Field(None, alias="uploadLimit")
-    upload_limited: Optional[bool] = Field(None, alias="uploadLimited")
-
-    class Config:
-        allow_population_by_field_name = True
+    download_limit: int | None = Field(None, serialization_alias="downloadLimit")
+    download_limited: bool | None = Field(None, serialization_alias="downloadLimited")
+    edit_date: int | None = Field(None, serialization_alias="editDate")
+    files_wanted: Sequence[int] | None = Field(None, serialization_alias="files-wanted")
+    files_unwanted: Sequence[int] | None = Field(
+        None, serialization_alias="files-unwanted"
+    )
+    group: str | None = Field(None)
+    honors_session_limits: bool | None = Field(
+        None, serialization_alias="honorsSessionLimits"
+    )
+    ids: IdsArg | None = None
+    labels: Sequence[str] | None = None
+    location: str | None = None
+    peer_limit: int | None = Field(None, serialization_alias="peer-limit")
+    priority_high: Sequence[int] | None = Field(
+        None, serialization_alias="priority-high"
+    )
+    priority_low: Sequence[int] | None = Field(None, serialization_alias="priority-low")
+    priority_normal: Sequence[int] | None = Field(
+        None, serialization_alias="priority-normal"
+    )
+    queue_position: int | None = Field(None, serialization_alias="queuePosition")
+    seed_idle_limit: int | None = Field(None, serialization_alias="seedIdleLimit")
+    seed_idle_mode: int | None = Field(None, serialization_alias="seedIdleMode")
+    seed_ratio_limit: float | None = Field(None, serialization_alias="seedRatioLimit")
+    seed_ratio_mode: int | None = Field(None, serialization_alias="seedRatioMode")
+    tracker_list: str | None = Field(None, serialization_alias="trackerList")
+    upload_limit: int | None = Field(None, serialization_alias="uploadLimit")
+    upload_limited: bool | None = Field(None, serialization_alias="uploadLimited")

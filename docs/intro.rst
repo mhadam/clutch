@@ -1,7 +1,7 @@
 Intro
 =====
 
-Transmission comes with an `RPC server`_ that follows an `RPC protocol specification`_.
+Transmission comes with an `RPC server`_ with this `RPC protocol specification`_.
 
 When it receives a request, the server performs the requested action and sends back a response.
 
@@ -41,4 +41,4 @@ Likewise, ``result`` is the only required part.
     }
 
 .. _`RPC server`: https://en.wikipedia.org/wiki/Remote_procedure_call
-.. _`RPC protocol specification`: https://github.com/transmission/transmission/wiki/RPC-Protocol-Specification
+.. _`RPC protocol specification`: https://github.com/transmission/transmission/blob/main/docs/rpc-spec.md

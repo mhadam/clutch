@@ -35,7 +35,7 @@ def test_connection_marshals_types():
 
     assert response is not None
     assert isinstance(response.arguments, TorrentAccessorResponse)
-    assert response.arguments.dict(exclude_none=True)["torrents"] == [
+    assert response.arguments.model_dump(exclude_none=True)["torrents"] == [
         {"id": 1},
         {"id": 2},
     ]

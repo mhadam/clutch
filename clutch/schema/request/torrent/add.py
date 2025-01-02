@@ -1,6 +1,6 @@
-from typing import Sequence, Optional
+from typing import Self, Sequence
 
-from pydantic import BaseModel, Field, root_validator
+from pydantic import BaseModel, Field, model_validator
 
 
 class Cookie(BaseModel):
@@ -9,30 +9,35 @@ class Cookie(BaseModel):
 
 
 class TorrentAddArgumentsRequest(BaseModel):
-    cookies: Optional[Sequence[Cookie]]
-    download_dir: Optional[str] = Field(None, alias="download-dir")
-    filename: Optional[str] = None
-    metainfo: Optional[str] = None
-    paused: Optional[bool] = None
-    peer_limit: Optional[int] = Field(None, alias="peer-limit")
-    bandwidth_priority: Optional[int] = Field(None, alias="bandwidthPriority")
-    files_wanted: Optional[Sequence[int]] = Field(None, alias="files-wanted")
-    files_unwanted: Optional[Sequence[int]] = Field(None, alias="files-unwanted")
-    priority_high: Optional[Sequence[int]] = Field(None, alias="priority-high")
-    priority_low: Optional[Sequence[int]] = Field(None, alias="priority-low")
-    priority_normal: Optional[Sequence[int]] = Field(None, alias="priority-normal")
+    cookies: Sequence[Cookie] | None = None
+    download_dir: str | None = Field(None, serialization_alias="download-dir")
+    filename: str | None = None
+    metainfo: str | None = None
+    paused: bool | None = None
+    peer_limit: int | None = Field(None, serialization_alias="peer-limit")
+    bandwidth_priority: int | None = Field(
+        None, serialization_alias="bandwidthPriority"
+    )
+    files_wanted: Sequence[int] | None = Field(
+        None, serialization_alias="files-wanted"
+    )
+    files_unwanted: Sequence[int] | None = Field(
+        None, serialization_alias="files-unwanted"
+    )
+    priority_high: Sequence[int] | None = Field(
+        None, serialization_alias="priority-high"
+    )
+    priority_low: Sequence[int] | None = Field(
+        None, serialization_alias="priority-low"
+    )
+    priority_normal: Sequence[int] | None = Field(
+        None, serialization_alias="priority-normal"
+    )
 
-    class Config:
-        allow_population_by_field_name = True
-
-    @root_validator
-    def check_required_exclusive_fields(cls, values):
-        filename, metainfo = (
-            values.get("filename"),
-            values.get("metainfo"),
-        )
-        if filename is not None and metainfo is not None:
+    @model_validator(mode="after")
+    def check_required_exclusive_fields(self) -> Self:
+        if self.filename is not None and self.metainfo is not None:
             raise ValueError("Both filename and metainfo fields are in request")
-        if filename is None and metainfo is None:
+        if self.filename is None and self.metainfo is None:
             raise ValueError("Either filename or metainfo field is required in request")
-        return values
+        return self

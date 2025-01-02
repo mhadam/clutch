@@ -1,5 +1,5 @@
 import re
-from typing import Mapping, MutableMapping, Union, Sequence
+from typing import Mapping, MutableMapping, Sequence, Union
 
 
 def to_underscore(key: str) -> str:
@@ -22,7 +22,9 @@ def to_hyphen(key: str) -> str:
     return "-".join(key.split("_"))
 
 
-def normalize_arguments(arguments: Mapping[str, object] = None) -> Mapping[str, object]:
+def normalize_arguments(
+    arguments: Mapping[str, object] | None = None,
+) -> Mapping[str, object]:
     if arguments is None:
         return {}
 
