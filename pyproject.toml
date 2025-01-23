@@ -1,6 +1,6 @@
 [project]
 name = "transmission-clutch"
-version = "6.0.5"
+version = "7.0.0"
 description = "An RPC client library for the Transmission BitTorrent client"
 authors = [
     { name = "Michael Hadam" , email = "michael@hadam.us"}
