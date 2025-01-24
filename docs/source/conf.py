@@ -15,7 +15,7 @@ sys.path.insert(0, os.path.abspath("../../"))
 project = 'Clutch'
 copyright = '2025, Michael Hadam'
 author = 'Michael Hadam'
-release = '7.0.2'
+release = '7.0.3'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
