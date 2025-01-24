@@ -16,14 +16,6 @@ Version |release|.
     :target: https://pypi.org/project/transmission-clutch
     :alt: PyPI badge
 
-.. image:: https://img.shields.io/pypi/pyversions/transmission-clutch.svg
-    :target: https://pypi.org/project/transmission-clutch
-    :alt: PyPI versions badge
-
-.. image:: https://img.shields.io/pypi/l/transmission-clutch.svg
-    :target: https://en.wikipedia.org/wiki/MIT_License
-    :alt: License badge
-
 -----
 
 .. toctree::
