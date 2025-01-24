@@ -60,6 +60,8 @@ extend-include = ["clutch/", "tests/"]
 plugins = ["pydantic.mypy"]
 
 [tool.tomlscript]
+docs-autodoc="uv run sphinx-apidoc -o source/ ../clutch"
+docs-autogen="uv run sphinx-autogen source/index.rst -o source/"
 docs-reqs="uv export --only-group=docs --no-hashes | awk '{print $1}' FS=' ;' > docs/requirements.txt"
 mypy = "uv run mypy clutch/ tests/"
 ruff = "ruff format"
