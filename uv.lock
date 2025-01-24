@@ -755,11 +755,13 @@ dev = [
     { name = "hatchling" },
     { name = "mypy" },
     { name = "ruff" },
+    { name = "tomlscript" },
+    { name = "types-requests" },
+]
+docs = [
     { name = "sphinx" },
     { name = "sphinx-autobuild" },
     { name = "sphinx-autodoc-typehints" },
-    { name = "tomlscript" },
-    { name = "types-requests" },
 ]
 test = [
     { name = "deepdiff" },
@@ -779,11 +781,13 @@ dev = [
     { name = "hatchling", specifier = ">=1.27.0" },
     { name = "mypy" },
     { name = "ruff" },
+    { name = "tomlscript" },
+    { name = "types-requests", specifier = ">=2.32.0.20241016" },
+]
+docs = [
     { name = "sphinx" },
     { name = "sphinx-autobuild" },
     { name = "sphinx-autodoc-typehints" },
-    { name = "tomlscript" },
-    { name = "types-requests", specifier = ">=2.32.0.20241016" },
 ]
 test = [
     { name = "deepdiff", specifier = ">=8.1.1" },
