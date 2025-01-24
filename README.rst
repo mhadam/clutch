@@ -9,18 +9,6 @@ Clutch
     :target: https://pypi.org/project/transmission-clutch
     :alt: PyPI badge
 
-.. image:: https://img.shields.io/pypi/pyversions/transmission-clutch.svg
-    :target: https://pypi.org/project/transmission-clutch
-    :alt: PyPI versions badge
-
-.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
-    :target: https://github.com/ambv/black
-    :alt: Black formatter badge
-
-.. image:: https://img.shields.io/pypi/l/transmission-clutch.svg
-    :target: https://en.wikipedia.org/wiki/MIT_License
-    :alt: License badge
-
 .. image:: https://img.shields.io/pypi/dm/transmission-clutch.svg
     :target: https://pypistats.org/packages/transmission-clutch
     :alt: PyPI downloads badge
