@@ -7,6 +7,7 @@ Subpackages
 .. toctree::
    :maxdepth: 4
 
+   clutch.schema.request.misc
    clutch.schema.request.session
    clutch.schema.request.torrent
 

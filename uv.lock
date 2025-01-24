@@ -759,6 +759,7 @@ dev = [
     { name = "types-requests" },
 ]
 docs = [
+    { name = "pydantic" },
     { name = "sphinx" },
     { name = "sphinx-autobuild" },
     { name = "sphinx-autodoc-typehints" },
@@ -785,6 +786,7 @@ dev = [
     { name = "types-requests", specifier = ">=2.32.0.20241016" },
 ]
 docs = [
+    { name = "pydantic" },
     { name = "sphinx" },
     { name = "sphinx-autobuild" },
     { name = "sphinx-autodoc-typehints" },

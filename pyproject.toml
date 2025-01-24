@@ -32,6 +32,7 @@ dev = [
     "types-requests>=2.32.0.20241016",
 ]
 docs = [
+    "pydantic",
     "sphinx",
     "sphinx-autodoc-typehints",
     "sphinx-autobuild",
@@ -66,7 +67,7 @@ unit = """
 docker build -f docker/clutch.df -t clutch-test .
 docker run --rm --entrypoint "/bin/sh" clutch-test -c "mypy .; pytest tests/unit"
 """
-docs = "uv run sphinx-autogen docs/index.rst -o docs/"
+docs-gen = "uv run sphinx-autogen docs/index.rst -o docs/"
 docs-live = "uv run sphinx-autobuild docs docs/_build/html"
 clean-containers = """
 docker stop $(docker ps -a -q)

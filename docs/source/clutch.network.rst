@@ -36,7 +36,6 @@ clutch.network.utility module
    :undoc-members:
    :show-inheritance:
 
-
 Module contents
 ---------------
 

@@ -20,7 +20,6 @@ clutch.schema.user.response.session.stats module
    :undoc-members:
    :show-inheritance:
 
-
 Module contents
 ---------------
 

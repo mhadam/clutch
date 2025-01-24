@@ -20,7 +20,6 @@ clutch.network.rpc.message module
    :undoc-members:
    :show-inheritance:
 
-
 Module contents
 ---------------
 

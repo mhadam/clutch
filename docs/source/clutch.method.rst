@@ -52,7 +52,6 @@ clutch.method.torrent module
    :undoc-members:
    :show-inheritance:
 
-
 Module contents
 ---------------
 

@@ -28,7 +28,6 @@ clutch.schema.request.torrent.mutator module
    :undoc-members:
    :show-inheritance:
 
-
 Module contents
 ---------------
 

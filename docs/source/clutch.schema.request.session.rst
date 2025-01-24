@@ -28,7 +28,6 @@ clutch.schema.request.session.shared module
    :undoc-members:
    :show-inheritance:
 
-
 Module contents
 ---------------
 

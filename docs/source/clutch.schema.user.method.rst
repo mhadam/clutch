@@ -13,6 +13,14 @@ Subpackages
 Submodules
 ----------
 
+clutch.schema.user.method.misc module
+-------------------------------------
+
+.. automodule:: clutch.schema.user.method.misc
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 clutch.schema.user.method.shared module
 ---------------------------------------
 
@@ -20,7 +28,6 @@ clutch.schema.user.method.shared module
    :members:
    :undoc-members:
    :show-inheritance:
-
 
 Module contents
 ---------------

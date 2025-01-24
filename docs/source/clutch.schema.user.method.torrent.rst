@@ -60,7 +60,6 @@ clutch.schema.user.method.torrent.rename module
    :undoc-members:
    :show-inheritance:
 
-
 Module contents
 ---------------
 

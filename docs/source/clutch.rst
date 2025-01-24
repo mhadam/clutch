@@ -22,15 +22,6 @@ clutch.client module
    :undoc-members:
    :show-inheritance:
 
-clutch.compat module
---------------------
-
-.. automodule:: clutch.compat
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-
 Module contents
 ---------------
 
